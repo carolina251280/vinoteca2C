@@ -18,7 +18,7 @@ const vinoteca = {
       "date": "2021-11-02",
       "state":"En stock",
       "bodega":"Bo-Bó Wines",
-      "description": "Un Malbec fresco, rústico, salvaje, indómito: vinificado con levaduras naturales , buscando reflejar lo mas puro del espíritu del Malbec de nuestro viñedo directo de la botella. Con una crianza breve en barricas de tercer uso, solo se busco el aporte de micro oxigenación y el soporte necesario para darnos como reseultado un Malbec muy actual, jugoso y vibrante.",
+      "description": "Un Malbec fresco, rústico, salvaje, indómito: vinificado con levaduras naturales , buscando reflejar lo mas puro del espíritu del Malbec de nuestro viñedo directo de la botella.",
       "category":"Vinos tintos",
       "price": 3800
     },
@@ -131,7 +131,7 @@ const vinoteca = {
         "date": "2022-10-15",
         "state": "En stock",
         "bodega":"Veuve Clicquot",
-        "description": "Veuve Clicquot Yellow Label es un ejemplo perfecto de armonía entre delicadeza y energía. Dominada por Pinot Noir, este vino tiene una estructura firme, redondeada con un toque de Pinot Meunier. Casi un tercio de Chardonnay le da la elegancia y delicadeza necesaria para un equilibrio perfecto.",
+        "description": "Veuve Clicquot Yellow Label es un ejemplo perfecto de armonía entre delicadeza y energía. Dominada por Pinot Noir, este vino tiene una estructura firme, redondeada con un toque de Pinot Meunier.",
         "category": "Vinos espumantes",
         "price": 35500
       }
