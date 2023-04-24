@@ -60,11 +60,11 @@ function imprimir(id){
         default:
             console.log("Estos son todos los vinos");
             display(vinos);
-            document.getElementById("tituloPrincipal").innerHTML = "Vinos";
+            document.getElementById("tituloPrincipal").innerHTML = "Vinos";         
     }
     
 }
-imprimir("home");
+
 
 function display (array){
 
@@ -97,7 +97,7 @@ function display (array){
     }
     document.getElementById("contenedor").innerHTML = html;
 }
-
+imprimir("home");
 
 /* <p class="price">$ ${array[i].price}</p>
         <button>Agregar al carrito</button> */

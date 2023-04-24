@@ -1,10 +1,13 @@
-console.log(location.search)
-var id = location.search.split(Number)
-console.log(id)
-var selectId = id[0]
-console.log(selectId)
+
+var vinos = vinoteca.vinos;
+
+var id = location.search.split("?id=").filter(Number)
+
+var selectId = id[0];
+console.log(selectId);
 
 const detallesEvento = [];
+
 for(var i = 0; i < vinos.length ; i++){
     if(vinos[i].id == selectId){
         detallesEvento.push(vinos[i]);
@@ -12,7 +15,8 @@ for(var i = 0; i < vinos.length ; i++){
     }
 }
 
-var texto = document.getElementById("idDetalle");
+var texto = document.getElementById("idDetalle")
+
     texto.innerHTML = `
          
      <div class="imagen-detalle">
@@ -20,8 +24,8 @@ var texto = document.getElementById("idDetalle");
 			</div>
             <div class="detalles">
             <div>
-                    <h2>Nombre del Vino</h2>
-                    <p class="precio">Precio: $XX</p>
+                    <h2>${detallesEvento[0].name}</h2>
+                    <p class="precio">Precio: $ ${detallesEvento[0].price}</p>
                     <p class="cantidad">Cantidad:</p>
                     <div class="contador">
                         <button type="button" onclick="disminuir()"><i class="fa-solid fa-minus"></i></button>
@@ -33,7 +37,7 @@ var texto = document.getElementById("idDetalle");
                 </div>
                 <div>
                     <h3>Descripción:</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod justo non ipsum tincidunt, vel lobortis magna iaculis. Proin lobortis hendrerit enim vel faucibus. Duis auctor massa vel ex sagittis congue. Vestibulum ut pharetra lacus. </p>
+                    <p>${detallesEvento[0].description} </p>
                     <h3>Detalles del Vino:</h3>
                     <ul>
                         <li>País de origen: </li>
@@ -52,8 +56,9 @@ var navLink = document.getElementsByClassName("nav-link");
 
 for(var i = 0; i < navLink.length ; i++){
     const elementos = navLink[i];
+
     elementos.addEventListener("click", function(e){
-        imprimir(e.target.id)
+        imprimir(e.target.id);
 
         document.getElementById("idDetalle").style.display = "none";
         document.getElementById("contenedor").style.display = "flex";
