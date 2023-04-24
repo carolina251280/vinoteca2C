@@ -1,0 +1,114 @@
+h1 {
+	margin: 0;
+	font-size: 2.5em;
+}
+
+p, ul {
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+/* Estilos específicos de la sección de detalles del vino */
+
+section {
+	display: flex;
+	flex-wrap: wrap;
+    width: 100%;
+}
+
+section > div {
+	flex: 1;
+	padding: 1em;
+	box-sizing: border-box;
+}
+
+
+.detalles{
+    display: flex;
+    flex-direction: column;
+    
+}
+.contador{
+    display: flex;
+    flex-direction: row;
+}
+
+section img {
+	max-width: 95%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+section h2 {
+	font-size: 2em;
+	margin-top: 0;
+}
+
+section .precio {
+	font-size: 1.5em;
+	color: #900;
+	margin-top: 0;
+}
+
+section .cantidad {
+	margin: 1em 0 0;
+	font-size: 1.2em;
+}
+
+section .cantidad > div {
+	display: flex;
+	align-items: center;
+}
+
+section .cantidad button {
+	background-color: #333;
+	color: white;
+	border: none;
+	padding: 0.5em;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+section .cantidad input {
+	width: 4em;
+	text-align: center;
+	font-size: 1.2em;
+	border: none;
+	background-color: #eee;
+}
+
+section .cantidad input:focus {
+	outline: none;
+}
+
+section button {
+	background-color: #900;
+	color: white;
+	border: none;
+	padding: 1em;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+.boton-carrito{
+    margin-left: 1rem;
+}
+
+section h3 {
+	font-size: 1.5em;
+	margin-top: 1em;
+}
+
+section ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+section li {
+	margin-bottom: 0.5em;
+}
+
+#contenedor{
+	display: flex;
+}

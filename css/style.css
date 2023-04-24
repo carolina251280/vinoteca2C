@@ -116,21 +116,22 @@ section {
 	color: #261c15;
 }
 
-.product button {
+.btn {
 	display: block;
 	margin-top: 20px;
 	padding: 10px;
-	background-color: #ff6600;
+	background-color: #ff6600 !important;
 	color: #ffffff;
 	border: none;
 	cursor: pointer;
 	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.product button:hover {
-	background-color: orangered;
+.btn:hover {
+	background-color: orangered !important;
 	color: white;
 }
+
 
 footer{
 

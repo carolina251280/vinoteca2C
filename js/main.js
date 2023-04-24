@@ -64,21 +64,40 @@ function imprimir(id){
     }
     
 }
+imprimir("home");
 
 function display (array){
+
+    var url;
+    var imageUrl;
+    if(location.pathname == "/pages/details.html"){
+
+        url = "./details.html"
+        imageUrl = "../img/"
+    }
+    else{
+        url = "./pages/details.html"
+        imageUrl = "./img/"
+    }
+
     var html = "";
     
     for(i = 0; i < array.length; i++){
         html += `
         <div class="product">
-        <img src="./img/${array[i].image}" alt="Vino tinto 1">
+        <img src="${imageUrl}${array[i].image}" alt="Vino tinto 1">
         <h3>${array[i].name}</h3>
         <p>${array[i].description}</p>
-        <p class="price">$ ${array[i].price}</p>
-        <button>Agregar al carrito</button>
+        <div class="row item">
+          <p class="col-6">$ ${array[i].price}</p>
+          <a href="${url}?id=${array[i].id}" class="col-4 btn">Ver mas</a> 
+        </div>
     </div>
          `
     }
     document.getElementById("contenedor").innerHTML = html;
 }
-imprimir("home");
+
+
+/* <p class="price">$ ${array[i].price}</p>
+        <button>Agregar al carrito</button> */
