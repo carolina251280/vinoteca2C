@@ -7,19 +7,26 @@ body {
 }
 
 header {
-	background-color: #de6209;
+	background-color: #e97420;
 	color: #f6f1e6;
 	padding: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	align-items: center;
+	/* align-items: center; */
 	box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 .navegacion{
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	padding: .5rem 1rem;
+	align-items: center;
 	
+	
+}
+.imagen-logo{
+	width: 100px;
 }
 nav{
 	display: flex;
@@ -35,6 +42,13 @@ nav ul {
 
 nav ul li {
 	margin-right: 20px;
+	padding: .5rem;
+}
+
+nav ul li:hover {
+	margin-right: 20px;
+	background-color: #333333;
+	padding: .5rem;
 }
 
 nav ul li a {
@@ -61,7 +75,7 @@ section {
     align-items: center;
 	width: 100%;
 }
-#tituloPrincipal{
+#time{
 	color: rgb(131, 35, 35);
 }
 
@@ -97,15 +111,15 @@ section {
 }
 
 .product h3 {
-	margin-top: 10px;
+	margin-top: 1rem;
 	font-size: 1.2em;
 	text-align: center;
-	color: #333;
+	color: rgb(131, 35, 35);
 }
 
 .product p {
-	margin: 10px 6px;
-	font-size: 1rem;
+	margin: .3rem .5rem;
+	font-size: .9rem;
 	text-align: justify;
 	color: #767575;
 }

@@ -1,3 +1,15 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.imagen-logo{
+	width: 100px;
+}
+#idDetalle{
+	padding: 0;
+}
+
 h1 {
 	margin: 0;
 	font-size: 2.5em;
@@ -32,12 +44,15 @@ section > div {
     display: flex;
     flex-direction: row;
 }
+div .imagen-detalle{
+	width: 30%;
+}
 
 section img {
-	max-width: 95%;
+	max-width: 80%;
 	height: auto;
 	display: block;
-	margin: 0 auto;
+	margin: 0;
 }
 
 section h2 {
@@ -49,6 +64,7 @@ section .precio {
 	font-size: 1.5em;
 	color: #900;
 	margin-top: 0;
+	margin-bottom: 0;
 }
 
 section .cantidad {
@@ -65,8 +81,8 @@ section .cantidad button {
 	background-color: #333;
 	color: white;
 	border: none;
-	padding: 0.5em;
-	font-size: 1.5em;
+	padding: 0.1em;
+	font-size: 0.5em;
 	cursor: pointer;
 }
 
@@ -87,7 +103,7 @@ section button {
 	color: white;
 	border: none;
 	padding: 1em;
-	font-size: 1.2em;
+	font-size: 1.0em;
 	cursor: pointer;
 }
 .boton-carrito{
@@ -96,7 +112,7 @@ section button {
 
 section h3 {
 	font-size: 1.5em;
-	margin-top: 1em;
+	margin-top: 0.3rem;
 }
 
 section ul {
