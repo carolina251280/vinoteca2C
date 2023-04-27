@@ -21,6 +21,7 @@ var botonNav = document.getElementsByClassName("boton");
 for (var i = 0; i < botonNav.length; i++) {
   const element = botonNav[i];
   element.addEventListener("click", function (e) {
+    document.getElementById("time").innerHTML = e.target.innerText
     imprimir(e.target.id);
   });
 }
@@ -30,25 +31,31 @@ function imprimir(id) {
     case "vinosTintos":
       console.log("Estos son los vinos tintos");
       display(vinosTintos);
-      document.getElementById("tituloPrincipal").innerHTML = "Vinos tintos";
+      document.getElementById("time").innerHTML = "Vinos tintos";
       break;
 
     case "vinosRosados":
       console.log("Estos son los vinos rosados");
       display(vinosRosados);
-      document.getElementById("tituloPrincipal").innerHTML = "Vinos Rosados";
+      document.getElementById("time").innerHTML = "Vinos Rosados";
       break;
 
     case "vinosBlancos":
       console.log("Estos son los vinos blancos");
       display(vinosBlancos);
-      document.getElementById("tituloPrincipal").innerHTML = "Vinos Blancos";
+      document.getElementById("time").innerHTML = "Vinos Blancos";
       break;
 
     case "vinosEspumantes":
       console.log("Estos son los vinos espumantes");
       display(vinosEspumantes);
-      document.getElementById("tituloPrincipal").innerHTML = "Vinos Espumantes";
+      document.getElementById("time").innerHTML = "Vinos Espumantes";
+      break;
+
+      case "contacto":
+      console.log("Estamos en contacto");
+      display(contacto);
+      document.getElementById("time").innerHTML = "Contacto";
       break;
 
     default:
@@ -78,7 +85,7 @@ function display(array) {
         <h3>${array[i].name}</h3>
         <p>${array[i].description}</p>
         <div class="row item">
-          <p class="col-6">$ ${array[i].price}</p>
+          <p class="col-6 price">$ ${array[i].price}</p>
           <a href="${url}?id=${array[i].id}" class="col-4 btn">Ver mas</a> 
         </div>
     </div>

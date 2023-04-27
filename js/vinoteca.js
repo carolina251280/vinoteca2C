@@ -10,7 +10,8 @@ const vinoteca = {
       "crianza": "15 meses en roble Francés",
       "graduacion": "14,0%",
       "cepa": "Blend",
-      "description": "Malbec, Bonarda y Cabernet Sauvignon sellados con una sutil presencia de Cabernet Franc dan vida a un blend de excelencia. Refinado, distinguido y complejo.",
+      "description": "Malbec, Bonarda y Cabernet Sauvignon sellados con una sutil presencia de Cabernet Franc dan vida a un blend de excelencia.",
+      "descriptionExtensa": "Malbec, Bonarda y Cabernet Sauvignon sellados con una sutil presencia de Cabernet Franc dan vida a un blend de excelencia. Refinado, distinguido y complejo.",
       "category":"Vinos tintos",
       "price": 11800
     },
@@ -24,7 +25,8 @@ const vinoteca = {
       "crianza": "6 meses en barricas de roble americano de tercer uso",
       "graduacion": "14,9%",
       "cepa": "Malbec",
-      "description": "Un Malbec fresco, rústico, salvaje, indómito: vinificado con levaduras naturales , buscando reflejar lo mas puro del espíritu del Malbec de nuestro viñedo directo de la botella.",
+      "description": "Un Malbec fresco, rústico, salvaje, indómito: vinificado con levaduras naturales , buscando reflejar lo mas puro del espíritu del Malbec.",
+      "descriptionExtensa": "Un Malbec fresco, rústico, salvaje, indómito: vinificado con levaduras naturales , buscando reflejar lo mas puro del espíritu del Malbec de nuestro viñedo directo de la botella.",
       "category":"Vinos tintos",
       "price": 3800
     },
@@ -38,7 +40,8 @@ const vinoteca = {
       "crianza": "24 meses en barricas nuevas de roble francés.",
       "graduacion": "14,5%",
       "cepa": "Pinot Noir",
-      "description": "Este varietal 100% pinot noir sorprende por la tonalidad e intensidad en su aspecto visual ya que ofrece un color rojo profundo muy intenso con matices negros de gran atractivo y vivacidad.",
+      "description": "Este varietal 100% pinot noir sorprende por la tonalidad e intensidad en su aspecto visual ya que ofrece un color rojo profundo.",
+      "descriptionExtensa": "Este varietal 100% pinot noir sorprende por la tonalidad e intensidad en su aspecto visual ya que ofrece un color rojo profundo muy intenso con matices negros de gran atractivo y vivacidad.",
       "category": "Vinos tintos",
       "price": 8500
     },
@@ -53,7 +56,8 @@ const vinoteca = {
       "crianza": "4 años en barricas de roble frances",
       "graduacion": "15,0%",
       "cepa": "Moscatel, Torrontés",
-      "description": "Esta MISTELA DOMICIANO es elaborada a partir de una selección de uvas Moscatel y Torrontes. Una vez cortadas con alcohol vinico, son criadas por 4 años en barricas de roble frances para logra la complejidad aromatica y color caramelo que la caracterizan.",
+      "description": "Esta MISTELA DOMICIANO es elaborada a partir de una selección de uvas Moscatel y Torrontes.",
+      "descriptionExtensa": "Esta MISTELA DOMICIANO es elaborada a partir de una selección de uvas Moscatel y Torrontes. Una vez cortadas con alcohol vinico, son criadas por 4 años en barricas de roble frances para logra la complejidad aromatica y color caramelo que la caracterizan.",
       "category": "Vinos rosados",
       "price": 3750
     },
@@ -67,7 +71,8 @@ const vinoteca = {
       "crianza": "Embotellado sin filtración previa y estiba durante 6 a 8 meses",
       "graduacion": "14,0%",
       "cepa": "Criolla",
-      "description": "El Esteco Old Vines es un homenaje a la vida y trayectoria de algunas de nuestras fincas con más de 50 años de antigüedad. Viñedos que viven en armonía con el terroir y precisan la mínima intervención del hombre para regalarnos vinos excepcionales.",
+      "description": "El Esteco Old Vines es un homenaje a la vida y trayectoria de algunas de nuestras fincas con más de 50 años de antigüedad.",
+      "descriptionExtensa": "El Esteco Old Vines es un homenaje a la vida y trayectoria de algunas de nuestras fincas con más de 50 años de antigüedad. Viñedos que viven en armonía con el terroir y precisan la mínima intervención del hombre para regalarnos vinos excepcionales.",
       "category": "Vinos rosados",
       "price": 5850
     },
@@ -82,6 +87,7 @@ const vinoteca = {
       "graduacion": "13,9%",
       "cepa": "Chardonnay",
       "description": "Angélica Chardonnay es un “single vineyard” que refleja características propias de la zona de gran altitud en donde se origina. ",
+      "descriptionExtensa": "Angélica Chardonnay es un “single vineyard” que refleja características propias de la zona de gran altitud en donde se origina. ",
       "category": "Vinos rosados",
       "price": 4320
     },
@@ -96,7 +102,8 @@ const vinoteca = {
       "crianza": "5 % en roble francés de primer uso, 5% de roble americano de primer uso, 90 % en tanques de acero inoxidable (sobre borra)",
       "graduacion": "14,0%",
       "cepa": "Chardonnay",
-      "description": "Un Chardonnay 100% bajo el estilo del mejor Borgoña",
+      "description": "Un Chardonnay 100% bajo el estilo del mejor Borgoña.",
+      "descriptionExtensa": "Un Chardonnay 100% bajo el estilo del mejor Borgoña.",
       "category": "Vinos blancos",
       "price": 3700
     },
@@ -110,7 +117,8 @@ const vinoteca = {
       "crianza": "9 meses en barricas de roble frances y americano.",
       "graduacion": "13,5%",
       "cepa": "Chardonnay",
-      "description": "Muy elegante, este vino despliega aromas a manzanas rojas, peras, miel y canela. De gran frescura, es untuoso y posee un carácter mineral. En boca presenta un suave final.",
+      "description": "Muy elegante, este vino despliega aromas a manzanas rojas, peras, miel y canela.",
+      "descriptionExtensa": "Muy elegante, este vino despliega aromas a manzanas rojas, peras, miel y canela. De gran frescura, es untuoso y posee un carácter mineral. En boca presenta un suave final.",
       "category": "Vinos blancos",
       "price": 2650
     },
@@ -124,7 +132,8 @@ const vinoteca = {
       "crianza": "7 meses sobre borras.",
       "graduacion": "14,1%",
       "cepa": "Chardonnay",
-      "description": "Es un Chardonnay voluminoso y largo en su paso. Especial para acompañar carnes de aves de corral, con salsas a base de cremas y alcaparras",
+      "description": "Chardonnay voluminoso y largo en su paso. Especial para acompañar carnes de aves de corral, con salsas a base de cremas y alcaparras.",
+      "descriptionExtensa": "Es un Chardonnay voluminoso y largo en su paso. Especial para acompañar carnes de aves de corral, con salsas a base de cremas y alcaparras.",
       "category": "Vinos blancos",
       "price": 2500
     },
@@ -139,7 +148,8 @@ const vinoteca = {
         "crianza": "Envejecido en tanques durante 3 a 9 meses, 50% leñoso.",
         "graduacion": "12%",
         "cepa": "Brut",
-        "description": "Moët & Chandon Impérial es el champán icónico de la Maison. Creado en 1869, encarna el estilo único de Moët & Chandon, un estilo que se distingue por su frutado brillante, su paladar seductor y su elegante madurez.",
+        "description": "Moët & Chandon Impérial es el champán icónico de la Maison. Creado en 1869, encarna el estilo único de Moët & Chandon.",
+        "descriptionExtensa": "Moët & Chandon Impérial es el champán icónico de la Maison. Creado en 1869, encarna el estilo único de Moët & Chandon, un estilo que se distingue por su frutado brillante, su paladar seductor y su elegante madurez.",
         "category": "Vinos espumantes",
         "price": 33600
       },
@@ -153,7 +163,8 @@ const vinoteca = {
         "crianza": "Envejecido en tanques durante 3 a 9 meses, 50% leñoso.",
         "graduacion": "12,5%",
         "cepa": "Blend",
-        "description": "Dom Pérignon Vintage se elabora exclusivamente a partir de las mejores uvas de un único año, reinventándose a sí mismo mediante la interpretación del singular carácter de las estaciones y atreviéndose a no elaborar un Vintage si la cosecha no cumple las elevadas expectativas.",
+        "description": "Dom Pérignon Vintage se elabora exclusivamente a partir de las mejores uvas de un único año.",
+        "descriptionExtensa": "Dom Pérignon Vintage se elabora exclusivamente a partir de las mejores uvas de un único año, reinventándose a sí mismo mediante la interpretación del singular carácter de las estaciones y atreviéndose a no elaborar un Vintage si la cosecha no cumple las elevadas expectativas.",
         "category": "Vinos espumantes",
         "price": 55000
       },
@@ -167,7 +178,8 @@ const vinoteca = {
         "crianza": "Envejecido en tanques durante 3 a 9 meses, 50% leñoso.",
         "graduacion": "12,0%",
         "cepa": "Brut",
-        "description": "Veuve Clicquot Yellow Label es un ejemplo perfecto de armonía entre delicadeza y energía. Dominada por Pinot Noir, este vino tiene una estructura firme, redondeada con un toque de Pinot Meunier.",
+        "description": "Veuve Clicquot Yellow Label es un ejemplo perfecto de armonía entre delicadeza y energía.",
+        "descriptionExtensa": "Veuve Clicquot Yellow Label es un ejemplo perfecto de armonía entre delicadeza y energía. Dominada por Pinot Noir, este vino tiene una estructura firme, redondeada con un toque de Pinot Meunier.",
         "category": "Vinos espumantes",
         "price": 35500
       }
