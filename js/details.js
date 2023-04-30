@@ -26,7 +26,7 @@ texto.innerHTML = `
   <p class="precio">Precio: $ ${detallesEvento[0].price}</p>
     <h3>Descripción:</h3>
     <p>${detallesEvento[0].descriptionExtensa} </p>
-    <h3>Detalles del Vino:</h3>
+    <h3>Detalles:</h3>
     <ul>
       <li>Región: ${detallesEvento[0].region}</li>
       <li>Añada: ${detallesEvento[0].crianza}</li>
