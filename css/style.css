@@ -22,8 +22,8 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: center; */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  
 }
 .navegacion {
   display: flex;
@@ -31,6 +31,7 @@ header {
   justify-content: space-between;
   padding: 0.5rem 1rem;
   align-items: center;
+  
 }
 .imagen-logo {
   width: 150px;
@@ -75,8 +76,6 @@ nav ul li a:hover {
   color: white;
   padding: 0 8px;
   
-
-
 }
 
 .carrito:hover {
@@ -134,6 +133,9 @@ section {
   box-shadow: none !important;
   border-color: rgb(209, 206, 206) !important;
   cursor: pointer;
+}
+.lupa{
+  rotate: 360deg;
 }
 
 
