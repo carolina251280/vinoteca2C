@@ -60,14 +60,14 @@ for (var i = 0; i < navLink.length; i++) {
   });
 }
 
-//contadores
+contadores
 
-// function aumentar() {
-//     var campoCantidad = document.getElementById("cantidad");
-//     campoCantidad.stepUp(1);
-// }
+function aumentar() {
+    var campoCantidad = document.getElementById("cantidad");
+    campoCantidad.stepUp(1);
+}
 
-// function disminuir() {
-//     var campoCantidad = document.getElementById("cantidad");
-//     campoCantidad.stepDown(1);
-// }
+function disminuir() {
+    var campoCantidad = document.getElementById("cantidad");
+    campoCantidad.stepDown(1);
+}

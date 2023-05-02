@@ -96,7 +96,7 @@ section {
   align-items: center;
   width: 100%;
 }
-#time {
+#name {
   color: rgb(131, 35, 35);
 }
 
@@ -223,4 +223,11 @@ footer {
   font-family: "Questrial", sans-serif;
   display: flex;
   align-items: center;
+}
+
+.ceroResult{
+  font-size: 25px;
+  color: rgb(131, 35, 35);
+  font-family: "Questrial", sans-serif;
+  padding-top: 4rem;
 }
