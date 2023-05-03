@@ -1,4 +1,4 @@
-var vinos = vinoteca.vinos;
+//var vinos = vinoteca.vinos;
 
 var id = location.search.split("?id=").filter(Number);
 
@@ -60,7 +60,7 @@ for (var i = 0; i < navLink.length; i++) {
   });
 }
 
-contadores
+//contadores
 
 function aumentar() {
     var campoCantidad = document.getElementById("cantidad");

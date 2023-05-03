@@ -4,6 +4,7 @@ var vinosRosados = [];
 var vinosBlancos = [];
 var vinosEspumantes = [];
 var arrayAFiltrar = [];
+var searchContainer = document.getElementsByClassName("filtroCheck")
 for (var i = 0; i < vinos.length; i++) {
   if (vinos[i].category == "Vinos tintos") {
     vinosTintos.push(vinos[i]);
@@ -24,6 +25,7 @@ var botonNav = document.getElementsByClassName("boton");
 for (var i = 0; i < botonNav.length; i++) {
   const element = botonNav[i];
   textoBoton.push(botonNav[i].innerText)
+
   element.addEventListener("click", function (e) {
     document.getElementById("name").innerHTML = e.target.innerText
     imprimir(e.target.id)
@@ -61,6 +63,7 @@ function imprimir(id) {
       console.log("Estos son los vinos rosados");
      // document.getElementById("time").innerHTML = "Vinos Rosados";
      arrayAFiltrar = vinosRosados;
+     searchContainer[0].classList.remove("searchContainer")
       display(vinosRosados);
       break;
 
@@ -74,6 +77,7 @@ function imprimir(id) {
       console.log("Estos son los vinos blancos");
      // document.getElementById("time").innerHTML = "Vinos Blancos";
      arrayAFiltrar = vinosBlancos;
+     searchContainer[0].classList.remove("searchContainer")
       display(vinosBlancos);
       break;
 
@@ -87,6 +91,7 @@ function imprimir(id) {
       console.log("Estos son los vinos espumantes");
      // document.getElementById("time").innerHTML = "Vinos Espumantes";
      arrayAFiltrar = vinosEspumantes;
+     searchContainer[0].classList.remove("searchContainer")
       display(vinosEspumantes);
       break;
 
@@ -99,7 +104,9 @@ function imprimir(id) {
       // botonNav[5].classList.add("active");
       console.log("Estamos en contacto");
      // document.getElementById("time").innerHTML = "Contacto";
-      display(contacto);
+      searchContainer[0].classList.add("searchContainer")
+      //display(contacto);
+      formulario();
       break;
 
     default:
@@ -110,8 +117,9 @@ function imprimir(id) {
       // botonNav[4].classList.remove("active");
       // botonNav[5].classList.remove("active");
       console.log("Estos son todos los vinos");
-     // document.getElementById("time").innerHTML = "Vinos";
+     //document.getElementById("time").innerHTML = "Vinos";
      arrayAFiltrar = vinos;
+     searchContainer[0].classList.remove("searchContainer")
       display(vinos);
   }
 }
@@ -143,6 +151,33 @@ function display(array) {
         `;
   }
   document.getElementById("contenedor").innerHTML = html;
+}
+
+
+//Página de contactos 
+
+function formulario(){
+  var formulary;
+      formulary = `<div class="container">
+      <section id="content">
+        <form action="">
+          <h1 class="tituloForm">Login Form</h1>
+          <div>
+            <input type="text" placeholder="Username" required="" id="username" />
+          </div>
+          <div>
+            <input type="password" placeholder="Password" required="" id="password" />
+          </div>
+          <div>
+            <input type="submit" value="Log in" />
+            <a href="#">Lost your password?</a>
+            <a href="#">Register</a>
+          </div>
+        </form><!-- form -->
+        
+      </section><!-- content -->
+    </div><!-- container -->`
+      document.getElementById("contenedor").innerHTML = formulary;
 }
 
 //pantalla de detalle
@@ -179,14 +214,12 @@ switch (time[1]) {
     break;
 
   default:
-    
+    document.getElementById("name").innerHTML = "Home";
     imprimir("vinos");
 }
-imprimir("vinos")
+
 
 //carrusel
-
-
 
 //función que dinamisa botón left y right
 
@@ -230,6 +263,7 @@ function changePage(i){
       botonNav[3].classList.remove("active");
       botonNav[4].classList.remove("active");
       botonNav[5].classList.remove("active");
+      searchContainer[0].classList.remove("searchContainer")
 
     break;
 
@@ -241,6 +275,7 @@ function changePage(i){
           botonNav[3].classList.remove("active");
           botonNav[4].classList.remove("active");
           botonNav[5].classList.remove("active");
+          searchContainer[0].classList.remove("searchContainer")
     break;
 
     case 2: display(vinosRosados);
@@ -251,6 +286,7 @@ function changePage(i){
           botonNav[3].classList.remove("active");
           botonNav[4].classList.remove("active");
           botonNav[5].classList.remove("active");
+          searchContainer[0].classList.remove("searchContainer")
     break;
 
     case 3: display(vinosBlancos);
@@ -261,6 +297,7 @@ function changePage(i){
           botonNav[3].classList.add("active");
           botonNav[4].classList.remove("active");
           botonNav[5].classList.remove("active");
+          searchContainer[0].classList.remove("searchContainer")
     break;
 
     case 4: display(vinosEspumantes);
@@ -271,9 +308,10 @@ function changePage(i){
           botonNav[3].classList.remove("active");
           botonNav[4].classList.add("active");
           botonNav[5].classList.remove("active");
+          searchContainer[0].classList.remove("searchContainer")
     break;
 
-    case 5: display(contacto);
+    case 5: formulario();
     document.getElementById("name").innerHTML = textoBoton[i];
           botonNav[0].classList.remove("active");
           botonNav[1].classList.remove("active");
@@ -281,16 +319,12 @@ function changePage(i){
           botonNav[3].classList.remove("active");
           botonNav[4].classList.remove("active");
           botonNav[5].classList.add("active");
+          searchContainer[0].classList.add("searchContainer")
     break;
   }
 }
 
-// function contacto(){
-//   document.getElementById("contacto").innerHTML = `
 
-//   <h1>Aquí va el formulario</h1>
-//   `
-// }
 
 // function botones() {
 //   if (time[1] == "vinosTintos") {
@@ -348,6 +382,5 @@ function capturaEvento(evento){
     display(filtrado);
   }
  
-  
-
 }
+
