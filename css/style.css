@@ -255,7 +255,7 @@ form:after {
 	visibility: hidden;
 }
 .container { 
-	margin: 2rem auto; 
+	margin: auto; 
 	position: relative; 
 	width: 900px; 
 	}

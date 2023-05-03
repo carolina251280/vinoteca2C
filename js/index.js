@@ -51,6 +51,7 @@ function imprimir(id) {
      //document.getElementById("time").innerHTML = "Vinos Tintos";
      arrayAFiltrar = vinosTintos;
       display(vinosTintos);
+      eventosCategories(vinosTintos);
       break;
 
     case "vinosRosados":
@@ -65,6 +66,7 @@ function imprimir(id) {
      arrayAFiltrar = vinosRosados;
      searchContainer[0].classList.remove("searchContainer")
       display(vinosRosados);
+      eventosCategories(vinosRosados);
       break;
 
     case "vinosBlancos":
@@ -79,6 +81,7 @@ function imprimir(id) {
      arrayAFiltrar = vinosBlancos;
      searchContainer[0].classList.remove("searchContainer")
       display(vinosBlancos);
+      eventosCategories(vinosBlancos);
       break;
 
     case "vinosEspumantes":
@@ -93,6 +96,7 @@ function imprimir(id) {
      arrayAFiltrar = vinosEspumantes;
      searchContainer[0].classList.remove("searchContainer")
       display(vinosEspumantes);
+      eventosCategories(vinosEspumantes);
       break;
 
     case "contacto":
@@ -121,6 +125,7 @@ function imprimir(id) {
      arrayAFiltrar = vinos;
      searchContainer[0].classList.remove("searchContainer")
       display(vinos);
+      eventosCategories(vinos);
   }
 }
 
@@ -324,37 +329,84 @@ function changePage(i){
   }
 }
 
+//Checkbox
+
+//CREACIÓN DINÁMICA DE CHECKBOX POR CATEGORÍA 
+
+function eventosCategories(array){
+
+let categories = array.map(evento => evento.cepa)
 
 
-// function botones() {
-//   if (time[1] == "vinosTintos") {
- 
-//     botonLeft.href = "index.html?time=vinos";
-//     botonRight.href = "index.html?time=vinosRosados";
-//   } else if (time[1] == "vinosRosados") {
+//el método SET devuelve del array un objeto con los datos unicos, no los repite
+let unica = new Set(categories)
 
 
-//     botonLeft.href = "index.html?time=vinosTintos";
-//     botonRight.href = "index.html?time=vinosBlancos";
-//   } else if (time[1] == "vinosBlancos") {
+//trasformo en un array el contenido del abjeto unica
+let lastCategories = [...unica]
+//console.log(lastCategories);
+
+let categoriasVinos = ""
+lastCategories.map(cepa =>
+  categoriasVinos += 
+`
+<div class="form-check">
+<input
+  class="form-check-input checkCuadro"
+  type="checkbox"
+  value="${cepa}"
+  id="flexCheckDefault"
+/>
+<label
+  class="form-check-label checkCategoria"
+  for="flexCheckDefault"
+>
+  ${cepa}
+</label>
+</div>
+`
+  )
 
 
-//     botonLeft.href = "index.html?time=vinosRosados";
-//     botonRight.href = "index.html?time=vinosEspumantes";
-//   } else if (time[1] == "vinosEspumantes") {
+document.getElementById("checkcategories").innerHTML = categoriasVinos;
+checkboxListener()
+}
 
-//     botonLeft.href = "index.html?time=vinosBlancos";
-//     botonRight.href = "index.html?time=contacto";
-//   } else if (time[1] == "contacto") {
 
-//     botonLeft.href = "index.html?time=vinosEspumantes";
-//     botonRight.href = "index.html?time=vinos";
-//   } else {
+function checkboxListener(){
 
-//     botonLeft.href = "index.html?time=contacto";
-//     botonRight.href = "index.html?time=vinosTintos";
-//   }
-// }
+//ESCUCHA Y GUARDADO DE CHECKBOX CHECKED
+//por un selectorAll capturo las etiquetas input de tipo checkbox
+var checkboxs = document.querySelectorAll('input[type=checkbox')
+
+//creo un array vacio ñpara poder guardar los datos de los checkbox con condición checked true
+let checkCheckBoxes = [];
+
+//recorro cada uno de los input checkbox y le apilico un escuachador de eventos change
+for(i =0 ; i < checkboxs.length ; i++ ){
+  checkboxs[i].addEventListener("change", function(e){
+
+    //limpio el array donde voyaa guardar los inut con checked true ya que utilizo un método push
+    //caso contrario se van a agregar más eventos 
+    checkCheckBoxes = [];
+
+    //recorro el array de checkbox para extraer aquellos cuyo atributo checked sea true
+    for(i = 0; i < checkboxs.length; i++){
+
+      if(checkboxs[i].checked){
+
+        //si se cumple la condición de checked true los empujo al array que defini para almacenar 
+        //los checkbox chequeados
+        checkCheckBoxes.push(checkboxs[i].value)
+      }
+    }
+
+    //FILTRAR LOS EVENTOS EN FUNCION DE LAS CATEGORIAS CHAQUEADAS
+    console.log(checkCheckBoxes);
+    console.log(arrayAFiltrar);
+  })
+}
+}
 
 
 
