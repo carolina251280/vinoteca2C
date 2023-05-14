@@ -182,6 +182,36 @@ const vinoteca = {
         "descriptionExtensa": "Veuve Clicquot Yellow Label es un ejemplo perfecto de armonía entre delicadeza y energía. Dominada por Pinot Noir, este vino tiene una estructura firme, redondeada con un toque de Pinot Meunier.",
         "category": "Vinos espumantes",
         "price": 35500
+      },
+      {
+        "id": 13,
+        "image":"13.jpg",
+        "name": "Verum",
+        "state": "En stock",
+        "bodega":"Del Rio Elorza",
+        "region": "Fernandez Oro, Alto Valle Rio Negro, Patagonia.",
+        "crianza": "10 % en barrica de roble francés de 3° uso 10% en barricas de roble americano 3° uso 80 % Piletas de hormigón sin epoxi.",
+        "graduacion": "14,10%",
+        "cepa": "Malbec",
+        "description": "Vinos producidos con tecnología de vanguardia en su propia bodega equipada con tanques de acero inoxidable, piletas de hormigón sin pintar, barricas de roble francés y americano.",
+        "descriptionExtensa": "Veuve Clicquot Yellow Label es un ejemplo perfecto de armonía entre delicadeza y energía. Dominada por Pinot Noir, este vino tiene una estructura firme, redondeada con un toque de Pinot Meunier.",
+        "category": "Vinos tintos",
+        "price": 3700
+      },
+      {
+        "id": 14,
+        "image":"14.jpg",
+        "name": "Mairena Ocasión SB",
+        "state": "En stock",
+        "bodega":"Familia Blanco",
+        "region": "Ugarteche (Luján de Cuyo). Mendoza.",
+        "crianza": "",
+        "graduacion": "12,50%",
+        "cepa": "Sauvignon Blanc",
+        "description": "Sus nítidos aromas de frutos tropicales y cítricos, como el pomelo, se mezclan con sutiles notas herbáceas como la ruda. En boca es bien estructurado y de cuerpo medio, tenso y con una acidez natural muy balanceada que le da un largo final.",
+        "descriptionExtensa": "Veuve Clicquot Yellow Label es un ejemplo perfecto de armonía entre delicadeza y energía. Dominada por Pinot Noir, este vino tiene una estructura firme, redondeada con un toque de Pinot Meunier.",
+        "category": "Vinos blancos",
+        "price": 2200
       }
     ]
 }

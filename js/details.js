@@ -3,7 +3,6 @@
 var id = location.search.split("?id=").filter(Number);
 
 var selectId = id[0];
-console.log(selectId);
 
 const detallesEvento = [];
 
