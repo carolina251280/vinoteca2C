@@ -27,7 +27,8 @@ href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
 />
 <link rel="stylesheet" href="./css/carousel.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/nosotros.css">
+    <link rel="stylesheet" href="./css/nosotros.css"/>
+    <link rel="stylesheet" href="./css/contacto.css"/>
       <link rel="shortcut icon" type="image/png" href="./img/logo2.png" />
     <title>Vinoteca</title>
   </head>
@@ -68,19 +69,21 @@ href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     </header>
 
     <main>
-      <!-- Carousel -->
+      <!-- Carousel Títulos-->
       <div class="titulo">
         <a id="left"><i class="fa-solid fa-chevron-left"></i></a>
         <h1 id="name"></h1>
         <a id="right"><i class="fa-solid fa-chevron-right"></i></a>
       </div>
 
+      <!-- Carousel Fotos-->
       <div class="marquee" id="carouselExperiencia">
         <ul class="marquee-content" id="experiencias">
 
         </ul>
       </div>
 
+      <!-- Selector de Categorías-->
       <div class="row d-flex justify-content-around w-100 filtroCheck">
         <form
           class="form-inline mt-2 mb-2 d-flex justify-content-around flex-wrap w-75"
@@ -91,6 +94,8 @@ href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
           
         </select>
       </form>
+
+      <!-- Search Container-->
         <form class="form-inline mt-2 mb-2 d-flex justify-content-end w-25">
           <input
             class="form-control p-1 mr-sm-2 w-100 h-25 h-sm-50 p-sm-3 inputSearch"
@@ -106,83 +111,19 @@ href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
           </button>
         </form>
       </div>
+      
+      <!-- Contenedor Cards -->
       <section class="pt-0" id="contenedor"></section>
-      <section class="pt-0" id="idContacto"></section>
-
-
-
 
       <!-- Nosotros -->
       <section id="nosotrosContain">
-        <div class="descripcion">
-          <!-- <h1 class="titulo">aquatic animals</h1>
-          <hr> -->
-          <p>"Vinos es una exquisita vinoteca que ofrece una amplia selección de vinos de alta calidad para los amantes y conocedores de esta deliciosa bebida. Nuestro objetivo es proporcionar una experiencia única, donde cada visita sea un viaje sensorial a través de los sabores y aromas de los mejores vinos del mundo.
 
-            En Vinos, encontrarás una cuidadosa y variada colección de vinos tintos, blancos, rosados y espumantes, cuidadosamente seleccionados de reconocidas bodegas y regiones vinícolas. Nuestro equipo de expertos en vinos está siempre disponible para brindarte asesoramiento personalizado y recomendaciones según tus preferencias y ocasiones especiales."</p>
-          <!-- <a href="#">download app</a> -->
-        </div>
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide swiper-slide--one">
-              <div>
-                <h2>Experiencias</h2>
-                <p>Muchos viñedos ofrecen experiencias de maridaje, se combinan vinos con alimentos seleccionados. Los visitantes pueden descubrir cómo los sabores del vino se realzan y complementan con platos específicos.</p>
-                <a href="https://en.wikipedia.org/wiki/Jellyfish" target="_blank">explore</a>
-              </div>
-            </div>
-            <div class="swiper-slide swiper-slide--two">
-              <div>
-                <h2>Eventos</h2>
-                <p>
-                  Muchos viñedos organizan eventos especiales, como festivales de vendimia, conciertos al aire libre, cenas temáticas y celebraciones en épocas especiales del año.
-                </p>
-                <a href="https://en.wikipedia.org/wiki/Seahorse" target="_blank">explore</a>
-              </div>
-            </div>
-      
-            <div class="swiper-slide swiper-slide--three">
-      
-              <div>
-                <h2>Maridaje</h2>
-                <p>
-                  Una de las experiencias más populares en los viñedos son las catas de vino. Los expertos en vinos guían a los visitantes a través de una selección de vinos, explicando sus características, aromas y sabores.
-                </p>
-                <a href="https://en.wikipedia.org/wiki/Octopus" target="_blank">explore</a>
-              </div>
-            </div>
-      
-            <div class="swiper-slide swiper-slide--four">
-      
-              <div>
-                <h2>Bodegas</h2>
-                <p>
-                  Sharks are a group of elasmobranch fish characterized by a cartilaginous skeleton, five to seven gill slits on the sides of the head, and pectoral fins that are not fused to the head.
-                </p>
-                <a href="https://en.wikipedia.org/wiki/Shark" target="_blank">explore</a>
-              </div>
-            </div>
-      
-            <div class="swiper-slide swiper-slide--five">
-      
-              <div>
-                <h2>Viñedos</h2>
-                <p>
-                  Muchos viñedos ofrecen visitas guiadas por sus instalaciones, donde los visitantes tienen la oportunidad de recorrer los viñedos y aprender sobre el proceso de cultivo de las uvas. 
-                </p>
-                <a href="https://en.wikipedia.org/wiki/Dolphin" target="_blank">explore</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
-        </div>
+      <!-- Contacto -->
+      <section class="pt-0 contendor-formulario" id="idContacto"></section>      
+        
         <!-- <img src="https://cdn.pixabay.com/photo/2021/11/04/19/39/jellyfish-6769173_960_720.png" alt="" class="bg">
         <img src="https://cdn.pixabay.com/photo/2012/04/13/13/57/scallop-32506_960_720.png" alt="" class="bg2"> -->
       </section>
-
-
 
     </main>
     <footer>
@@ -217,15 +158,30 @@ href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
+      const firebaseConfig = {
+        apiKey: "AIzaSyA9MvWkijfUlTNMLJ8f23i9D7AmXGMXom8",
+        authDomain: "vinoteca-vinos.firebaseapp.com",
+        projectId: "vinoteca-vinos",
+        storageBucket: "vinoteca-vinos.appspot.com",
+        messagingSenderId: "1040907705520",
+        appId: "1:1040907705520:web:cecce23f3f214a52522f75",
+        measurementId: "G-YDPXJZ5LHN",
+      };
 
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore();
     </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./js/form.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/carousel.js"></script>
-    <script src="./js/form.js"></script>
+    
     
   </body>
 </html>

@@ -1,220 +1,264 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap"); */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
-* {
+:root {
+  --default-seconds: 3s;
+}
+
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  /* font-family: "Open Sans", sans-serif; */
+  font-family: 'Raleway', sans-serif;
 }
 
-section #nosotrosContain {
-  position: relative;
-  display: flex;
-  width: calc(min(90rem, 90%));
-  margin: 0 auto;
-  min-height: 100vh;
-  column-gap: 3rem;
-  padding-top: 0;
-  padding-block: min(20vh, 3rem);
-}
-
-.bg {
-  position: fixed;
-  top: -4rem;
-  left: -12rem;
-  z-index: -1;
-  opacity: 0;
-}
-
-.bg2 {
-  position: fixed;
-  bottom: -2rem;
-  right: -3rem;
-  z-index: -1;
-  width: 9.375rem;
-  opacity: 0;
-}
-
-/* section #nosotrosContain > div span {
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 1rem;
-  color: #717171;
-}
-
-section #nosotrosContain > div .tituloNosotros {
-  text-transform: capitalize;
-  letter-spacing: 0.8px;
-  font-family: 'Great Vibes', cursive;
-  font-weight: 900;
-  font-size: clamp(3.4375rem, 3.25rem + 0.75vw, 4rem);
-  background-color: #005baa;
-  background-image: linear-gradient(45deg, #005baa, #000000);
-  background-size: 100%;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-}
-
-section #nosotrosContain > div hr {
-  display: block;
-  background: #005baa;
-  height: 0.25rem;
-  width: 6.25rem;
-  border: none;
-  margin: 1.125rem 0 1.875rem 0;
-} */
-.descripcion{
-    padding: 1rem .5rem;
-    width: 50%;
-    font-size: 1rem;
-    font-family: "Roboto", sans-serif;
-}
-section #nosotrosContain > div p {
-  line-height: 1.6;
-  
-}
-
-section #nosotrosContain a {
-  display: inline-block;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #717171;
-  font-weight: 500;
-  background: #fff;
-  border-radius: 3.125rem;
-  transition: 0.3s ease-in-out;
-}
-
-section #nosotrosContain > div > a {
-  border: 2px solid #c2c2c2;
-  margin-top: 2.188rem;
-  padding: 0.625rem 1.875rem;
-}
-
-section #nosotrosContain > div > a:hover {
-  border: 0.125rem solid #005baa;
-  color: #005baa;
-}
-
-.swiper {
+.flex-container {
+  position: absolute;
+  height: 100vh;
   width: 100%;
-  padding-bottom: 1rem;
-}
-
-.swiper-pagination-bullet,
-.swiper-pagination-bullet-active {
-  background: #fff;
-}
-
-.swiper-pagination {
-  bottom: 1.25rem !important;
-}
-
-.swiper-slide {
-  width: 18rem;
-  height: 20rem;
+  display: -webkit-flex;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: self-start;
-}
-
-.swiper-slide h2 {
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.4;
-  margin-bottom: 0.625rem;
-  padding: 0 0 0 1.563rem;
-  text-transform: uppercase;
-}
-
-.swiper-slide p {
-  color: #dadada;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  padding: 0 1.563rem;
-  line-height: 1.6;
-  font-size: 0.75rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.swiper-slide a {
-  margin: 1.25rem 1.563rem 3.438rem 1.563rem;
-  padding: 0.438em 1.875rem;
-  font-size: 0.9rem;
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
 }
 
-.swiper-slide a:hover {
-  color: #005baa;
+.flex-title {
+  color: #f1f1f1;
+  position: relative;
+  font-size: 6vw;
+  margin: auto;
+  text-align: center;
+  transform: rotate(90deg);
+  top: 15%;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 
-.swiper-slide div {
-  display: none;
+@media screen and (max-width: 768px) {
+  .flex-title {
+    transform: rotate(0deg) !important;
+  }
+}
+
+.flex-about {
   opacity: 0;
-  padding-bottom: 0.625rem;
+  color: #f1f1f1;
+  position: relative;
+  width: 70%;
+  font-size: 2vw;
+  padding: 5%;
+  top: 20%;
+  border: 2px solid #f1f1f1;
+  border-radius: 10px;
+  line-height: 1.3;
+  margin: auto;
+  text-align: left;
+  transform: rotate(0deg);
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 
-.swiper-slide-active div {
-  display: block;
-  opacity: 1;
-}
-
-.swiper-slide--one {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
-    url("https://firebasestorage.googleapis.com/v0/b/vinoteca-647c0.appspot.com/o/nosotras%2Fe64daf66f3302f3309fbf9c2c26800593f03621d885e59c8_840.jpg?alt=media&token=56fa79c0-c0ee-4aea-bc8b-7a8ae3a053d4")
-      no-repeat 50% 50% / cover;
-}
-
-.swiper-slide--two {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
-    url("https://firebasestorage.googleapis.com/v0/b/vinoteca-647c0.appspot.com/o/nosotras%2F1444209788.jpg?alt=media&token=e16e84fb-6725-47c1-8b12-e4e6e626c674")
-      no-repeat 50% 50% / cover;
-}
-
-.swiper-slide--three {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
-    url("https://firebasestorage.googleapis.com/v0/b/vinoteca-647c0.appspot.com/o/nosotras%2F1653064295542.webp?alt=media&token=da2b74ba-d0cb-4929-971c-f8b1b45b40d9")
-      no-repeat 50% 50% / cover;
-}
-
-.swiper-slide--four {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
-    url("https://firebasestorage.googleapis.com/v0/b/vinoteca-647c0.appspot.com/o/nosotras%2FPortada-Avatar-21-1.jpg?alt=media&token=35f1377e-4a9e-4522-9770-8f6e9185b44c")
-      no-repeat 50% 50% / cover;
-}
-
-.swiper-slide--five {
-  background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
-    url("https://firebasestorage.googleapis.com/v0/b/vinoteca-647c0.appspot.com/o/nosotras%2Fweinguter-auf-mallorca.jpg?alt=media&token=db2a7545-bf39-446c-96d3-6a63bc133bdb")
-      no-repeat 50% 50% / cover;
-}
-
-.swiper-3d .swiper-slide-shadow-left,
-.swiper-3d .swiper-slide-shadow-right {
-  background-image: none;
-}
-
-@media screen and (min-width: 48rem) {
-    section #nosotrosContain {
-    display: flex;
-    align-items: center;
-  }
-  .bg,
-  .bg2 {
-    opacity: 0.1;
+@media screen and (max-width: 768px) {
+  .flex-about {
+    padding: 0%;
+    border: 0px solid #f1f1f1;
   }
 }
 
-@media screen and (min-width: 93.75rem) {
-  .swiper {
-    width: 85%;
+.flex-slide {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  cursor: pointer;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-slide {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+}
+
+.flex-slide p {
+  @media screen and (max-width: 768px) {
+    font-size: 2em;
+  }
+}
+
+.flex-slide ul li {
+  @media screen and (max-width: 768px) {
+    font-size: 2em;
+  }
+}
+
+.flex-slide:hover {
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+
+.home {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://firebasestorage.googleapis.com/v0/b/vinoteca-647c0.appspot.com/o/nosotras%2Fweinguter-auf-mallorca.jpg?alt=media&token=db2a7545-bf39-446c-96d3-6a63bc133bdb);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    animation: aboutFlexSlide var(--default-seconds) 1;
+    animation-delay: 0s;
+  }
+}
+
+@keyframes aboutFlexSlide {
+  0% {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+  }
+  50% {
+    -webkit-flex-grow: 3;
+    flex-grow: 3;
+  }
+  100% {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+  }
+}
+
+.flex-title-home {
+  @media screen and (min-width: 768px) {
+    transform: rotate(90deg);
+    top: 15%;
+    animation: aboutFlexSlide var(--default-seconds) 1;
+    animation-delay: 0s;
+  }
+}
+
+@keyframes homeFlextitle {
+  0% {
+    transform: rotate(90deg);
+    top: 15%;
+  }
+  50% {
+    transform: rotate(0deg);
+    top: 15%;
+  }
+  100% {
+    transform: rotate(90deg);
+    top: 15%;
+  }
+}
+
+.flex-about-home {
+  opacity: 0;
+  @media screen and (min-width: 768px) {
+    animation: aboutFlexSlide var(--default-seconds) 1;
+    animation-delay: 0s;
+  }
+}
+
+@keyframes flexAboutHome {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.about {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://firebasestorage.googleapis.com/v0/b/vinoteca-647c0.appspot.com/o/nosotras%2Fe64daf66f3302f3309fbf9c2c26800593f03621d885e59c8_840.jpg?alt=media&token=56fa79c0-c0ee-4aea-bc8b-7a8ae3a053d4);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+.contact {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://firebasestorage.googleapis.com/v0/b/vinoteca-647c0.appspot.com/o/nosotras%2F1444209788.jpg?alt=media&token=e16e84fb-6725-47c1-8b12-e4e6e626c674);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.work {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://firebasestorage.googleapis.com/v0/b/vinoteca-647c0.appspot.com/o/nosotras%2F1653064295542.webp?alt=media&token=da2b74ba-d0cb-4929-971c-f8b1b45b40d9);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #222;
+  height: 100%;
+  width: 100%;
+  z-index: 11;
+  margin-top: 0;
+  color: #fff;
+  font-size: 1em;
+}
+
+.cube1,
+.cube2 {
+  background-color: #333;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  animation-delay: -0.9s;
+}
+
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+  }
+  50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+  }
+  50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+  }
+  75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }

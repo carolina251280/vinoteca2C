@@ -1,33 +1,26 @@
-var swiper = new Swiper(".swiper", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 3,
-    slideShadows: true
-  },
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 2
-    },
-    768: {
-      slidesPerView: 1
-    },
-    1024: {
-      slidesPerView: 2
-    },
-    1560: {
-      slidesPerView: 3
+function imageCarousel(array){
+
+    var experiencia = "";
+    
+    for (i = 0; i < array.length; i++) {
+      experiencia +=  `   
+        <li class="p-2"><img src="${array[i].experiencias}" alt="${array[i].name}"></li>
+        <li class="p-2"><img src="${array[i].fotosUvas}" alt="${array[i].name}"></li>          
+          `;
     }
-  }
-});
+    document.getElementById("experiencias").innerHTML = experiencia;
+    
+    const root = document.documentElement;
+    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+      "--marquee-elements-displayed"
+    );
+    
+    
+    const marqueeContent = document.querySelector("ul.marquee-content");
+    
+    root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+    
+    
+    }
 
 
