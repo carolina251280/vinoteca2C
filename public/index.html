@@ -20,16 +20,16 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
       rel="stylesheet"
     />
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
-<link rel="stylesheet" href="./css/carousel.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/carousel.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/nosotros.css"/>
-    <link rel="stylesheet" href="./css/contacto.css"/>
-      <link rel="shortcut icon" type="image/png" href="./img/logo2.png" />
+    <link rel="stylesheet" href="./css/nosotros.css" />
+    <link rel="stylesheet" href="./css/contacto.css" />
+    <link rel="shortcut icon" type="image/png" href="./img/logo2.png" />
     <title>Vinoteca</title>
   </head>
 
@@ -53,15 +53,13 @@ href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
               <a class="nav-link" id="vinosBlancos" href="#">Blancos</a>
             </li>
             <li>
-              <a class="nav-link" id="vinosEspumantes" href="#"
-                >Espumantes</a
-              >
+              <a class="nav-link" id="vinosEspumantes" href="#">Espumantes</a>
             </li>
             <li>
               <a class="nav-link" id="contacto" href="#">Contacto</a>
             </li>
           </ul>
-          <a class="carrito" href="#"
+          <a class="carrito" href="#" title="carrito"
             ><i class="fa-solid fa-cart-shopping"></i
           ></a>
         </nav>
@@ -78,9 +76,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
 
       <!-- Carousel Fotos-->
       <div class="marquee" id="carouselExperiencia">
-        <ul class="marquee-content" id="experiencias">
-
-        </ul>
+        <ul class="marquee-content" id="experiencias"></ul>
       </div>
 
       <!-- Selector de Categorías-->
@@ -88,14 +84,11 @@ href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
         <form
           class="form-inline mt-2 mb-2 d-flex justify-content-around flex-wrap w-75"
           id="checkcategories"
-
         >
-        <select name="cars" id="select">
-          
-        </select>
-      </form>
+          <select name="cars" title="selector" id="select"></select>
+        </form>
 
-      <!-- Search Container-->
+        <!-- Search Container-->
         <form class="form-inline mt-2 mb-2 d-flex justify-content-end w-25">
           <input
             class="form-control p-1 mr-sm-2 w-100 h-25 h-sm-50 p-sm-3 inputSearch"
@@ -106,25 +99,23 @@ href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
           <button
             class="lupa btn btn-outline-success my-sm-0 h-25 h-sm-50 p-sm-3 m-2 d-flex align-items-sm-center"
             type="submit"
-          >
+          > 
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
       </div>
-      
+
       <!-- Contenedor Cards -->
       <section class="pt-0" id="contenedor"></section>
 
       <!-- Nosotros -->
       <section id="nosotrosContain">
+        <!-- Contacto -->
+        <section class="pt-0 contendor-formulario" id="idContacto"></section>
 
-      <!-- Contacto -->
-      <section class="pt-0 contendor-formulario" id="idContacto"></section>      
-        
         <!-- <img src="https://cdn.pixabay.com/photo/2021/11/04/19/39/jellyfish-6769173_960_720.png" alt="" class="bg">
         <img src="https://cdn.pixabay.com/photo/2012/04/13/13/57/scallop-32506_960_720.png" alt="" class="bg2"> -->
       </section>
-
     </main>
     <footer>
       <section
@@ -173,15 +164,12 @@ href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
       const db = firebase.firestore();
     </script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="./js/form.js"></script>
-    <script src="./js/index.js"></script>
     <script src="./js/carousel.js"></script>
-    
+    <script src="./js/index.js"></script>
+    <script src="./js/form.js"></script>
     
   </body>
 </html>

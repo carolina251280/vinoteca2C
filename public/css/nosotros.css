@@ -28,7 +28,7 @@ body {
 .flex-title {
   color: #f1f1f1;
   position: relative;
-  font-size: 6vw;
+  font-size: 4.5rem;
   margin: auto;
   text-align: center;
   transform: rotate(90deg);
@@ -50,10 +50,10 @@ body {
   opacity: 0;
   color: #f1f1f1;
   position: relative;
-  width: 70%;
-  font-size: 2vw;
-  padding: 5%;
-  top: 20%;
+  width: 85%;
+  font-size: 1.3rem;
+  padding: 3%;
+  top: 15%;
   border: 2px solid #f1f1f1;
   border-radius: 10px;
   line-height: 1.3;
@@ -71,6 +71,7 @@ body {
   .flex-about {
     padding: 0%;
     border: 0px solid #f1f1f1;
+    font-size: 1rem;
   }
 }
 

@@ -238,7 +238,7 @@ footer {
   background: rgb(131, 35, 35);
 }
 .me-5 {
-  font-family: "Questrial", sans-serif;
+  /* font-family: "Questrial", sans-serif; */
   display: flex;
   align-items: center;
 }

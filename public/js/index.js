@@ -1,6 +1,5 @@
 let coleccionVinos = firebase.firestore().collection("Vinoteca");
 let vinos = [];
-//var vinos = vinoteca.vinos;
 var vinosTintos = [];
 var vinosRosados = [];
 var vinosBlancos = [];
@@ -128,8 +127,7 @@ function imprimir(id) {
       searchContainer[0].classList.add("searchContainer");
       carouselExperiencias.style.display = "none";
       contenedor.style.display = "flex";
-      nosotrosId.style.display = "none";
-      //contacto.style.display = "flex";      
+      nosotrosId.style.display = "none";  
       formulario();
       break;
 
@@ -168,7 +166,7 @@ function display(array) {
         <div class="row item">
           <p class="col-6 price">$ ${array[i].price}</p>
           <a href="${url}?id=${array[i].id}" class="col-4 btn">Ver mas</a> 
-          <button class="botonExplore col-9">Agregar al carrito<i class="fa-solid fa-cart-shopping"></i></button>
+          <button class="botonCarrito col-9">Agregar al carrito<i class="fa-solid fa-cart-shopping"></i></button>
         </div>
         
     </div>
@@ -177,6 +175,33 @@ function display(array) {
   }
   document.getElementById("contenedor").innerHTML = html;
 }
+
+function imageCarousel(array){
+
+    var experiencia = "";
+    
+    for (i = 0; i < array.length; i++) {
+      experiencia +=  `   
+        <li class="p-2"><img src="${array[i].experiencias}" alt="${array[i].name}"></li>
+        <li class="p-2"><img src="${array[i].fotosUvas}" alt="${array[i].name}"></li>          
+          `;
+    }
+    document.getElementById("experiencias").innerHTML = experiencia;
+    
+    const root = document.documentElement;
+    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+      "--marquee-elements-displayed"
+    );
+    
+    
+    const marqueeContent = document.querySelector("ul.marquee-content");
+    
+    root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+    
+    
+    }
+
+
 
 //Página de nosotros
 function comentarioNosotros(){
@@ -203,9 +228,9 @@ function comentarioNosotros(){
 		<div class="flex-about"><p>Muchos viñedos ofrecen visitas guiadas por sus instalaciones, donde los visitantes tienen la oportunidad de recorrer los viñedos y aprender sobre el proceso de cultivo de las uvas. </p></div>
 	</div>
 	<div class="flex-slide contact">
-		<div class="flex-title">Contact</div>
+		<div class="flex-title">Viñedos</div>
 				<div class="flex-about">
-					<p>Use the contact form below</p>					
+					<p>En los viñedos, las vides son cuidadosamente cultivadas y cosechadas en el momento óptimo de madurez. Los viticultores emplean técnicas agrícolas especializadas para garantizar que las uvas alcancen su máximo potencial en términos de sabor, aroma y equilibrio.</p>					
 
 		</div>
 	</div>
@@ -349,7 +374,7 @@ function changePage(i) {
       botonNav[5].classList.remove("active");
       botonNav[6].classList.remove("active");
       searchContainer[0].classList.add("searchContainer");
-
+      comentarioNosotros();
       break;
     case 2:
       display(vinosTintos);

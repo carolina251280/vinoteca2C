@@ -57,25 +57,38 @@ coleccionVinosRef.get().then((results) => {
   <div class="hero-left">
   <div class="layers">
     <div class="layer layer-displayed" data-scene="1">
-      <span>${vinosDetalles[0].category}</span>
+      <span>${vinosDetalles[0].name}</span>
       <div class="layer__image" style="background-image: url('${vinosDetalles[0].image}')"></div>
       <div class="layer__info">
         <div>
-          <strong>Nombre</strong>
-          <strong>Cepa</strong>
-          <strong>Crianza</strong>
-          <strong>Región</strong>
-          <strong>Graduación</strong>
-          <strong>Precio</strong>
+        <div class="detallesVinos"> </div>
+          <div class="detallesVinos"> 
+          <strong>Cepa:</strong>
+          <p> ${vinosDetalles[0].cepa}</p>
+          </div>
+          <div class="detallesVinos">
+          <strong>Crianza:</strong>
+          <p> ${vinosDetalles[0].crianza}</p>
+          </div class="detallesVinos">
+          <div class="detallesVinos"> 
+          <strong>Región: </strong>
+          <p> ${vinosDetalles[0].region}</p>
+          </div>
+          <div class="detallesVinos"> 
+          <strong>Graduación:</strong>
+          <p>  ${vinosDetalles[0].graduacion}</p>
+          </div>
+          <div class="detallesVinos"> 
+          <strong>Precio:</strong>
+          <p> $ ${vinosDetalles[0].price}</p>
+          </div>
+          
+          
+          
+          
+          
         </div>
-        <div>
-          <span>${vinosDetalles[0].name}</span>
-          <span>${vinosDetalles[0].cepa}</span>
-          <span>${vinosDetalles[0].crianza}</span>
-          <span>${vinosDetalles[0].region}</span>
-          <span>${vinosDetalles[0].graduacion}</span>
-          <span>$ ${vinosDetalles[0].price}</span>
-        </div>
+
       </div>
     </div>
 
