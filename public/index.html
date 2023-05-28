@@ -34,7 +34,7 @@
   </head>
 
   <body>
-    <header>
+    <header class="w-100">
       <div class="navegacion">
         <a class="logo" href="./index.html">
           <img class="imagen-logo" src="./img/LOGO.jpg" alt="Logo" />
@@ -59,9 +59,13 @@
               <a class="nav-link" id="contacto" href="#">Contacto</a>
             </li>
           </ul>
-          <a class="carrito" href="#" title="carrito"
+          
+          <div class="fondoCarrito">
+            <a class="nav-link carrito"  href="#" title="carrito"
             ><i class="fa-solid fa-cart-shopping"></i
-          ></a>
+          ><span id="carrito">0</span></a>
+          </div>
+          
         </nav>
       </div>
     </header>
@@ -99,7 +103,7 @@
           <button
             class="lupa btn btn-outline-success my-sm-0 h-25 h-sm-50 p-sm-3 m-2 d-flex align-items-sm-center"
             type="submit"
-          > 
+          >
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
@@ -107,6 +111,33 @@
 
       <!-- Contenedor Cards -->
       <section class="pt-0" id="contenedor"></section>
+
+      <!-- Contenedor carrito -->
+
+      <section id="contendorCarrito">
+        <div id="carrito-container"></div>
+        <button id="vaciar-carrito-btn">Vaciar carrito</button>
+
+      </section>
+
+
+
+      <div class="carrito-info">
+        <div>
+          <input
+          type="text"
+          id="cupon-input"
+          placeholder="Ingresa tu cupón de descuento"
+        />
+        <button id="aplicar-cupon-btn">Aplicar</button>
+        </div>
+        
+        <p>Total a pagar: $<span id="precioTotal">0.00</span></p>
+        <p>Descuento: $<span id="descuento">0.00</span></p>
+        <p>Total con descuento: $<span id="totalConDescuento">0.00</span></p>
+        <button id="pagar-btn">Pagar</button>
+
+      </div>
 
       <!-- Nosotros -->
       <section id="nosotrosContain">
@@ -138,6 +169,7 @@
         </div>
       </section>
     </footer>
+    <a href="#" class="subir"><i class="fa-solid fa-angle-up"></i></a>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
@@ -170,6 +202,5 @@
     <script src="./js/carousel.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/form.js"></script>
-    
   </body>
 </html>
