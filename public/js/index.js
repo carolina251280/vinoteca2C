@@ -11,9 +11,9 @@ var carouselExperiencias = document.getElementById("carouselExperiencia");
 var contenedor = document.getElementById("contenedor");
 var nosotrosId = document.getElementById("nosotrosContain");
 var contacto = document.getElementById("idContacto");
-var contenedorCarrito = document.getElementById("carrito-container");
-var seccionCarrito = document.getElementById ("carrito-info")
+var contenedorCarrito = document.getElementById("contendorCarrito");
 const contadorCarrito = document.getElementById("carrito");
+
 let checkCheckBoxes = [];
 let search = "";
 
@@ -57,13 +57,11 @@ for (var i = 0; i < botonNav.length; i++) {
     // e.preventDefault();
   });
 }
-//console.log(textoBoton);
 
 function imprimir(id) {
   const elem = document.getElementsByClassName("active")[0];
   const activoNuevo = document.getElementById(id);
-  // elem.classList.remove("active");
-  // activoNuevo.classList.add("active");
+  
 
   switch (id) {
     case "nosotros":
@@ -71,8 +69,7 @@ function imprimir(id) {
       comentarioNosotros();
       carouselExperiencias.style.display = "none";
       contenedor.style.display = "none";
-      contenedorCarrito.style.display = "none";
-      seccionCarrito.style.display = "none";
+      contenedorCarrito.style.display = "none";      
       nosotrosId.style.display = "flex";
       break;
     case "vinosTintos":
@@ -145,9 +142,8 @@ function imprimir(id) {
       carouselExperiencias.style.display = "none";
       contenedor.style.display = "none";
       nosotrosId.style.display = "none";
-      contenedorCarrito.style.display = "flex";
+      contenedorCarrito.style.display = "flex";      
       mostrarCarrito();
-
       break;
 
     default:
@@ -170,7 +166,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function display(array) {
   var url;
-  var imageUrl;
+  
   if (location.pathname == "/pages/details.html") {
     url = "./details.html";
   } else {
@@ -292,20 +288,18 @@ const mostrarCarrito = () => {
       eliminarBtn.classList.add("eliminar-btn");
       eliminarBtn.addEventListener("click", () =>{
 
-        eliminarProducto(producto.id)
-        mostrarTotalPagar(); 
+      eliminarProducto(producto.id)
+      mostrarTotalPagar(); 
       });
 
-    carritoContainer.appendChild(productoElement);
+      carritoContainer.appendChild(productoElement);
       productoElement.appendChild(nombreElement);
       productoElement.appendChild(imagenElement);
       productoElement.appendChild(precioElement);
       cantidadElement.appendChild(decrementarBtn);
       cantidadElement.appendChild(cantidadValorElement);
       cantidadElement.appendChild(incrementarBtn);
-      productoElement.appendChild(eliminarBtn);
-
-      
+      productoElement.appendChild(eliminarBtn);      
     });
     
   }
@@ -430,10 +424,6 @@ function realizarPago() {
   mostrarCarrito();
 }
 
-
-
-
-
 function imageCarousel(array) {
   var experiencia = "";
 
@@ -525,10 +515,7 @@ function comentarioNosotros() {
   })();
 }
 
-//console.log(location.search);
-
 var time = location.search.split("?time=");
-//console.log(time[1]);
 
 switch (time[1]) {
   case "nosotros":
@@ -560,8 +547,7 @@ switch (time[1]) {
     imprimir("contacto");
     break;
 
-  default:
-    // if(document.getElementById("name") !== null){}
+  default:    
     document.getElementById("name").innerHTML = "Home";
     imprimir("vinos");
 }
@@ -607,7 +593,8 @@ function changePage(i) {
       imageCarousel(vinos);
       carouselExperiencias.style.display = "flex";
       contenedor.style.display = "flex";
-      nosotrosId.style.display = "none";
+      nosotrosId.style.display = "none"; 
+      contenedorCarrito.style.display = "none";     
       document.getElementById("name").innerHTML = textoBoton[i];
       botonNav[0].classList.add("active");
       botonNav[1].classList.remove("active");
@@ -624,6 +611,7 @@ function changePage(i) {
       carouselExperiencias.style.display = "none";
       contenedor.style.display = "none";
       nosotrosId.style.display = "flex";
+      contenedorCarrito.style.display = "none";
       botonNav[0].classList.remove("active");
       botonNav[1].classList.add("active");
       botonNav[2].classList.remove("active");
@@ -640,7 +628,8 @@ function changePage(i) {
       eventosCategories(vinosTintos);
       carouselExperiencias.style.display = "flex";
       contenedor.style.display = "flex";
-      nosotrosId.style.display = "none";
+      nosotrosId.style.display = "none"; 
+      contenedorCarrito.style.display = "none";     
       document.getElementById("name").innerHTML = textoBoton[i];
       botonNav[0].classList.remove("active");
       botonNav[1].classList.remove("active");
@@ -658,7 +647,8 @@ function changePage(i) {
       eventosCategories(vinosRosados);
       carouselExperiencias.style.display = "flex";
       contenedor.style.display = "flex";
-      nosotrosId.style.display = "none";
+      nosotrosId.style.display = "none"; 
+      contenedorCarrito.style.display = "none";     
       document.getElementById("name").innerHTML = textoBoton[i];
       botonNav[0].classList.remove("active");
       botonNav[1].classList.remove("active");
@@ -676,7 +666,8 @@ function changePage(i) {
       eventosCategories(vinosBlancos);
       carouselExperiencias.style.display = "flex";
       contenedor.style.display = "flex";
-      nosotrosId.style.display = "none";
+      nosotrosId.style.display = "none";   
+      contenedorCarrito.style.display = "none";   
       document.getElementById("name").innerHTML = textoBoton[i];
       botonNav[0].classList.remove("active");
       botonNav[1].classList.remove("active");
@@ -694,7 +685,8 @@ function changePage(i) {
       eventosCategories(vinosEspumantes);
       carouselExperiencias.style.display = "flex";
       contenedor.style.display = "flex";
-      nosotrosId.style.display = "none";
+      nosotrosId.style.display = "none";    
+      contenedorCarrito.style.display = "none";  
       document.getElementById("name").innerHTML = textoBoton[i];
       botonNav[0].classList.remove("active");
       botonNav[1].classList.remove("active");
@@ -710,7 +702,8 @@ function changePage(i) {
       formulario();
       carouselExperiencias.style.display = "none";
       contenedor.style.display = "flex";
-      nosotrosId.style.display = "none";
+      nosotrosId.style.display = "none";   
+      contenedorCarrito.style.display = "none";   
       document.getElementById("name").innerHTML = textoBoton[i];
       botonNav[0].classList.remove("active");
       botonNav[1].classList.remove("active");
@@ -784,32 +777,6 @@ function eventosCategories(array) {
   });
   //checkboxListener();
 }
-
-// function checkboxListener() {
-//   //ESCUCHA Y GUARDADO DE CHECKBOX CHECKED
-//   //por un selectorAll capturo las etiquetas input de tipo checkbox
-//   var checkboxs = document.querySelectorAll("input[type=checkbox");
-
-//   //recorro cada uno de los input checkbox y le apilico un escuachador de eventos change
-//   for (i = 0; i < checkboxs.length; i++) {
-//     checkboxs[i].addEventListener("change", function (e) {
-//       //limpio el array donde voyaa guardar los inut con checked true ya que utilizo un método push
-//       //caso contrario se van a agregar más eventos
-//       checkCheckBoxes = [];
-
-//       //recorro el array de checkbox para extraer aquellos cuyo atributo checked sea true
-//       for (i = 0; i < checkboxs.length; i++) {
-//         if (checkboxs[i].checked) {
-//           //si se cumple la condición de checked true los empujo al array que defini para almacenar
-//           //los checkbox chequeados
-//           checkCheckBoxes.push(checkboxs[i].value);
-//         }
-//       }
-
-//       filtroCombinado();
-//     });
-//   }
-// }
 
 function filtroCombinado() {
   var filtrado = [];

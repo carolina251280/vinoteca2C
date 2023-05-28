@@ -19,9 +19,9 @@ body {
 }
 
 header {
-  background-image: url('../img/fondoNav.jpg');
+  background-image: url('../img/fondoNav.jpg') !important;
   background-repeat: repeat;
-  color: #f6f1e6;
+  color: #f6f1e6 ;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -29,14 +29,7 @@ header {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   
 }
-.navegacion {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  align-items: center;
-  
-}
+
 .imagen-logo {
   width: 100px;
   filter: drop-shadow(0px 0px 4px #f6f5f0);
@@ -54,7 +47,17 @@ nav ul {
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0;   
+}
+
+.navbar-collapse {
+  justify-content: end !important;
+}
+.navbar-nav {
+  width: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .fondoCarrito{
@@ -65,6 +68,12 @@ nav ul {
   background: goldenrod;
   width: 2.5rem;
   border-radius: 50%;
+  height: 2.5rem;    
+}
+
+.fondoCarrito:hover{
+background-color: #33333373;
+
 }
 
 .active {
@@ -72,30 +81,25 @@ nav ul {
   color: white;
 }
 
-nav ul li a {
-  color: black;
+nav ul li a {  
   text-decoration: none;
-  font-size: 20px !important;
+  font-size: 1rem !important;
   font-family: "Roboto Condensed", sans-serif !important;
-  padding: 8px !important;
+  padding: 4px !important;
+  color: #f6f1e6 !important;
 }
 
 nav ul li a:hover {
-  color: white;
-  background-color: #333333;
+  color: white; 
   transition: color 0.2s ease-in-out;
 }
 
 .carrito {
   color: white;
-  padding: 0 8px;
+  /* padding: 0 8px; */
   display: flex;
   align-items: center;  
-}
-
-.carrito:hover {
-  color: rgb(74, 74, 74);
-  padding: 0 8px;
+  
 }
 
 .titulo {
@@ -287,12 +291,12 @@ footer {
 
 /* Estilos para el contenedor del carrito */
 
-/* #contendorCarrito{
+#contendorCarrito{
   display: flex;
   flex-direction: row;
   width: 100%;
   flex-wrap: wrap;
-} */
+} 
 
 #carrito-container {
   display: flex !important;
