@@ -28,67 +28,53 @@
 
   <body>
     <header>
-      <div class="navegacion">
-        <a class="logo" id="home" href="../index.html">
-          <img class="imagen-logo" src="../img/LOGO.jpg" alt="Logo" />
-        </a>
-        <nav>
-          <ul>
-            <li>
-              <a class="nav-link " id="vinos" href="../index.html?time=#"
-                >Home</a
-              >
+
+       <nav class="navbar navbar-expand-sm ">
+      <div class="container-fluid w-100">
+        
+        <a class="navbar-brand logo" href="../index.html"><img src="../img/LOGO.jpg" alt="Logo vinoteca"
+            width="100" height="70" class="d-inline-block align-text-top" /></a>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link navbar-brand" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" id="vinos" href="../index.html?time=#">Home</a></li>
+            
+            <li class="nav-item"><a class="nav-link navbar-brand" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" id="nosotros" href="../index.html?time=nosotros#">Nosotros</a></li>
+            <li class="nav-item">
+              <a class="nav-link navbar-brand" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" id="vinosTintos" href="../index.html?time=vinosTintos#">Tintos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar-brand" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" id="vinosRosados" href="../index.html?time=vinosRosados#">Rosados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar-brand" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" id="vinosBlancos" href="../index.html?time=vinosBlancos#">Blancos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar-brand" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" id="vinosEspumantes"  href="../index.html?time=vinosEspumantes#">Espumantes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link navbar-brand" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" id="contacto" href="../index.html?time=contacto#">Contacto</a>
             </li>
 
-            <li>
-              <a class="nav-link " id="nosotros" href="../index.html?time=nosotros#"
-                >Nosotros</a
-              >
-            </li>
+            <li class="fondoCarrito"><a href="../index.html?time=carrito#" class="nav-link carrito" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" title="carrito"
+              ><i id="carrito" class="fas fa-shopping-cart"><span>0</span></i></a></li>
+          </ul>          
+        </div>
+                
+      </div>      
+    </nav>
 
-            <li>
-              <a
-                class="nav-link"
-                id="vinosTintos"
-                href="../index.html?time=vinosTintos#"
-                >Tintos</a
-              >
-            </li>
-            <li>
-              <a
-                class="nav-link"
-                id="vinosRosados"
-                href="../index.html?time=vinosRosados#"
-                >Rosados</a
-              >
-            </li>
-            <li>
-              <a
-                class="nav-link"
-                id="vinosBlancos"
-                href="../index.html?time=vinosBlancos#"
-                >Blancos</a
-              >
-            </li>
-            <li>
-              <a
-                class="nav-link"
-                id="vinosEspumantes"
-                href="../index.html?time=vinosEspumantes#"
-                >Espumantes</a
-              >
-            </li>
-            <li>
-              <a class="nav-link" id="contacto" href="../index.html?time=contacto#"
-                >Contacto</a
-              >
-            </li>
-          </ul>
-          <a class="carrito" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-        </nav>
-      </div>
+
+
+
     </header>
-    <main id="idDetalle">
+    <main id="idDetalle" class="container-fluid p-0 d-flex">
   <!-- carousel -->
       <!-- <div class="titulo">
         <a id="left" href="#"><i class="fa-solid fa-chevron-left"></i></a>
@@ -130,21 +116,12 @@
 
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyA9MvWkijfUlTNMLJ8f23i9D7AmXGMXom8",
-        authDomain: "vinoteca-vinos.firebaseapp.com",
-        projectId: "vinoteca-vinos",
-        storageBucket: "vinoteca-vinos.appspot.com",
-        messagingSenderId: "1040907705520",
-        appId: "1:1040907705520:web:cecce23f3f214a52522f75",
-        measurementId: "G-YDPXJZ5LHN",
-      };
 
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore();
     </script>
-
+    
 
     <!-- <script src="../js/index.js"></script> -->
     <script src="../js/details.js"></script>

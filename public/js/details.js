@@ -54,7 +54,8 @@ coleccionVinosRef.get().then((results) => {
   var texto = document.getElementById("idDetalle");
 
   texto.innerHTML = `
-  <div class="hero-left">
+  <div class="contenedorDetalles row col-12">
+  <div class="hero-left col-12 col-md-6 p-0">
   <div class="layers">
     <div class="layer layer-displayed" data-scene="1">
       <span>${vinosDetalles[0].name}</span>
@@ -82,11 +83,7 @@ coleccionVinosRef.get().then((results) => {
           <strong>Precio:</strong>
           <p> $ ${vinosDetalles[0].price}</p>
           </div>
-          
-          
-          
-          
-          
+                
         </div>
 
       </div>
@@ -94,7 +91,7 @@ coleccionVinosRef.get().then((results) => {
 
   </div>
 </div>
-<div class="hero-right">
+<div class="hero-right col-12 col-md-6 p-0">
   <div class="layer layer-displayed" data-scene="1"></div>
   <div class="layer" data-scene="2"></div>
   <div class="layer" data-scene="3"></div>
@@ -115,7 +112,7 @@ coleccionVinosRef.get().then((results) => {
     <div class="cover"></div>
   </div>
 </div>
-
+</div>
 
 
     `;

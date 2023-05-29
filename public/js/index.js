@@ -6,6 +6,7 @@ var vinosBlancos = [];
 var vinosEspumantes = [];
 var arrayAFiltrar = [];
 var searchContainer = document.getElementsByClassName("filtroCheck");
+var tituloCarousel = document.getElementById("tituloCarousel");
 var inputSearch = document.getElementById("inputSearch");
 var carouselExperiencias = document.getElementById("carouselExperiencia");
 var contenedor = document.getElementById("contenedor");
@@ -62,11 +63,22 @@ function imprimir(id) {
   const elem = document.getElementsByClassName("active")[0];
   const activoNuevo = document.getElementById(id);
   
+  // Si había un elemento con la clase "active", la removemos.
+  if(elem) {
+    elem.classList.remove("active");
+  }
+
+  // Verificamos que el id no sea "carrito" antes de agregar la clase "active".
+  if(id !== "carrito" && activoNuevo) {
+    // Agregamos la clase "active" al elemento nuevo.
+    activoNuevo.classList.add("active");
+  }
 
   switch (id) {
     case "nosotros":
       searchContainer[0].classList.add("searchContainer");
       comentarioNosotros();
+      tituloCarousel.style.display = "flex"
       carouselExperiencias.style.display = "none";
       contenedor.style.display = "none";
       contenedorCarrito.style.display = "none";      
@@ -75,6 +87,7 @@ function imprimir(id) {
     case "vinosTintos":
       arrayAFiltrar = vinosTintos;
       searchContainer[0].classList.remove("searchContainer");
+      tituloCarousel.style.display = "flex"
       carouselExperiencias.style.display = "flex";
       contenedor.style.display = "flex";
       nosotrosId.style.display = "none";
@@ -89,6 +102,7 @@ function imprimir(id) {
     case "vinosRosados":
       arrayAFiltrar = vinosRosados;
       searchContainer[0].classList.remove("searchContainer");
+      tituloCarousel.style.display = "flex"
       carouselExperiencias.style.display = "flex";
       contenedor.style.display = "flex";
       nosotrosId.style.display = "none";
@@ -103,6 +117,7 @@ function imprimir(id) {
     case "vinosBlancos":
       arrayAFiltrar = vinosBlancos;
       searchContainer[0].classList.remove("searchContainer");
+      tituloCarousel.style.display = "flex"
       carouselExperiencias.style.display = "flex";
       contenedor.style.display = "flex";
       contenedorCarrito.style.display = "none";
@@ -117,6 +132,7 @@ function imprimir(id) {
     case "vinosEspumantes":
       arrayAFiltrar = vinosEspumantes;
       searchContainer[0].classList.remove("searchContainer");
+      tituloCarousel.style.display = "flex"
       carouselExperiencias.style.display = "flex";
       contenedor.style.display = "flex";
       nosotrosId.style.display = "none";
@@ -130,6 +146,7 @@ function imprimir(id) {
 
     case "contacto":
       searchContainer[0].classList.add("searchContainer");
+      tituloCarousel.style.display = "flex"
       carouselExperiencias.style.display = "none";
       contenedorCarrito.style.display = "none";
       contenedor.style.display = "flex";
@@ -139,6 +156,7 @@ function imprimir(id) {
 
     case "carrito":
       searchContainer[0].classList.add("searchContainer");
+      tituloCarousel.style.display = "none"
       carouselExperiencias.style.display = "none";
       contenedor.style.display = "none";
       nosotrosId.style.display = "none";
@@ -149,6 +167,7 @@ function imprimir(id) {
     default:
       arrayAFiltrar = vinos;
       searchContainer[0].classList.remove("searchContainer");
+      tituloCarousel.style.display = "flex"
       carouselExperiencias.style.display = "flex";
       contenedor.style.display = "flex";
       nosotrosId.style.display = "none";
@@ -178,7 +197,7 @@ function display(array) {
   for (i = 0; i < array.length; i++) {
     html += `
         <div class="product">
-        <img src="${array[i].image}" alt=${array[i].name}">
+        <img class="col-12" src="${array[i].image}" alt=${array[i].name}">
         <h3>${array[i].name}</h3>
         <p>${array[i].cepa}</p>
         <div class="row item">
@@ -249,14 +268,14 @@ const mostrarCarrito = () => {
     // El carrito tiene productos
     carrito.forEach((producto) => {
       const productoElement = document.createElement("div");
-      productoElement.classList.add("producto-carrito");
+      productoElement.classList.add("producto-carrito","product");
 
       const imagenElement = document.createElement("img");
       imagenElement.src = producto.image;
       imagenElement.alt = producto.name;
       imagenElement.classList.add("producto-imagen");
 
-      const nombreElement = document.createElement("h4");
+      const nombreElement = document.createElement("h3");
       nombreElement.textContent = producto.name;
 
       const precioElement = document.createElement("p");
@@ -546,6 +565,11 @@ switch (time[1]) {
     document.getElementById("name").innerHTML = "Contacto";
     imprimir("contacto");
     break;
+
+    case "carrito":
+      document.getElementById("name").innerHTML = "Carrito";
+      imprimir("carrito");
+      break;
 
   default:    
     document.getElementById("name").innerHTML = "Home";

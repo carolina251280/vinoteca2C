@@ -37,6 +37,10 @@ header {
 .imagen-logo:hover {
   filter: drop-shadow(0px 0px 2px #ffffff);
 }
+.navbar-toggler {
+  background-color: goldenrod;
+}
+
 
 nav {
   display: flex;
@@ -96,14 +100,13 @@ nav ul li a:hover {
 
 .carrito {
   color: white;
-  /* padding: 0 8px; */
   display: flex;
   align-items: center;  
   
 }
 
 .titulo {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   justify-content: space-between;
   font-family: 'Great Vibes', cursive;  
@@ -145,7 +148,29 @@ nav ul li a:hover {
   box-shadow: none !important;
   border-color: rgb(209, 206, 206) !important;
   cursor: pointer;
+  margin-right: .5rem;
 }
+
+#checkcategories {
+  margin: 1rem 0;
+}
+
+#select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.1);
+  color: #333;
+  background-color: goldenrod;
+  transition: box-shadow 0.3s ease;
+  height: 2.2rem;
+}
+
+#select:focus {
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1);
+}
+
 .lupa{
   rotate: 360deg;
 }
@@ -163,10 +188,6 @@ nav ul li a:hover {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
-.product img {  
-  max-width: 100%;
-  height: 62%;
-}
 
 .product h3 {
   margin-top: 1rem;
@@ -293,9 +314,10 @@ footer {
 
 #contendorCarrito{
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
   flex-wrap: wrap;
+  width: 100%; 
+  padding: 1rem;
 } 
 
 #carrito-container {
@@ -303,23 +325,20 @@ footer {
   flex-direction: row;
   flex-wrap: wrap; 
   border: 1px solid #ccc;
-  padding: 20px;
   background-color: #f9f9f9;
-  width: 100%;
-
+  min-width: 100%;
+  justify-content: space-evenly;
+  align-items: start;
 }
 
 /* Estilos para los productos en el carrito */
 .producto-carrito {
   align-items: center;
   text-align: center;
-  margin: 10px;
-  padding: 10px;
+  padding: .5rem;
   border: 1px solid #ddd;
   background-color: #fff;
-  width: 23%;
-
-
+  margin: .5rem;
 }
 
 .producto-carrito h4 {
@@ -334,11 +353,10 @@ footer {
   background-color: #ff4444;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  min-width: 20%;
-  margin-left: 80%;
+  
 
 }
 #vaciar-carrito-btn:hover{
@@ -375,18 +393,23 @@ footer {
 #cupon-input {
   width: 63%;
   padding: 8px;
-  margin-bottom: 10px;
+  margin-right: .5rem;
+  
 }
 
 #aplicar-cupon-btn,
 #pagar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  width: 35%;
+  
+  
 }
 
 #aplicar-cupon-btn:hover,
@@ -416,7 +439,6 @@ footer {
   border: 1px solid #ccc;
   padding: 20px;
   background-color: #f9f9f9;
-  width: 30%;
   display: flex;
   flex-direction: column;
   margin: 1.5rem auto;

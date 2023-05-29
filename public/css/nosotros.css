@@ -28,7 +28,7 @@ body {
 .flex-title {
   color: #f1f1f1;
   position: relative;
-  font-size: 4.5rem;
+  font-size: 4rem;
   margin: auto;
   text-align: center;
   transform: rotate(90deg);
@@ -51,7 +51,7 @@ body {
   color: #f1f1f1;
   position: relative;
   width: 85%;
-  font-size: 1.3rem;
+  font-size: 1rem;
   padding: 3%;
   top: 15%;
   border: 2px solid #f1f1f1;
@@ -71,7 +71,7 @@ body {
   .flex-about {
     padding: 0%;
     border: 0px solid #f1f1f1;
-    font-size: 1rem;
+    font-size: .9rem;
   }
 }
 
@@ -96,15 +96,10 @@ body {
 
 .flex-slide p {
   @media screen and (max-width: 768px) {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 
-.flex-slide ul li {
-  @media screen and (max-width: 768px) {
-    font-size: 2em;
-  }
-}
 
 .flex-slide:hover {
   -webkit-flex-grow: 3;
