@@ -26,6 +26,28 @@ html, body {
     overflow-y: auto;
   }
 
+  .imagen-logo {
+    width: 100px !important;
+    filter: drop-shadow(0px 0px 4px #f6f5f0);
+  }
+  .imagen-logo:hover {
+    filter: drop-shadow(0px 0px 2px #ffffff);
+  }
+  .navbar-toggler {
+    background-color: goldenrod;
+  }
+
+  .navbar-nav {
+    width: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  
+  }
+
+  nav ul li a{
+    font-size: 1.65rem !important;
+  }
 .contenedorDetalles{
   width: 100%;
 }

@@ -19,13 +19,11 @@ let checkCheckBoxes = [];
 let search = "";
 
 coleccionVinos.get().then((results) => {
-  console.log(results);
   const data = results.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
   }));
   vinos = data;
-  console.log("Toda data en la colección 'vinos' ", vinos);
 
   for (var i = 0; i < vinos.length; i++) {
     if (vinos[i].category == "Vinos tintos") {
@@ -41,7 +39,6 @@ coleccionVinos.get().then((results) => {
 
   imprimir(vinos);
 });
-console.log("Toda la colección 'vinos' ", vinos);
 
 var textoBoton = [];
 //Capturando el id de la seccion a la categória que se le hizo click en el menu de navegación
@@ -213,6 +210,7 @@ function display(array) {
   document.getElementById("contenedor").innerHTML = html;
 
   // Agregar evento click a los botones "Agregar al carrito"
+ 
   const botonesAgregar = document.getElementsByClassName("boton-agregar");
   for (let i = 0; i < botonesAgregar.length; i++) {
     const boton = botonesAgregar[i];
@@ -228,241 +226,7 @@ function display(array) {
   }
 }
 
-// Esta es la nueva función para actualizar el contador del carrito
-function actualizarContadorCarrito() {
-  const totalProductos = carrito.reduce((total, producto) => total + producto.cantidad, 0);
-  contadorCarrito.innerText = totalProductos;
-}
 
-
-const agregarAlCarrito = (producto) => {
-  const index = carrito.findIndex((prod) => prod.id === producto.id);
-
-  if (index !== -1) {
-    // Si el producto ya está en el carrito, incrementa la cantidad en 1
-    carrito[index].cantidad += 1;
-  } else {
-    // Si el producto no está en el carrito, agrega el producto con cantidad 1
-    producto.cantidad = 1;
-    carrito.push(producto);
-    // Guardar el carrito actualizado en el localStorage
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-  }
-  actualizarContadorCarrito();
-  console.log(carrito);
-};
-
-contadorCarrito.innerText = carrito.length;
-// contadorCarrito.innerText = carrito.length;
-
-const mostrarCarrito = () => {
-
-  // Mostrar los productos en el carrito
-  const carritoContainer = document.getElementById("carrito-container");
-  carritoContainer.innerHTML = ""; // Limpiar el contenido previo del contenedor
-
-  if (carrito.length === 0) {
-    // El carrito está vacío
-    carritoContainer.innerHTML = "<p>El carrito está vacío</p>";
-  } else {
-    // El carrito tiene productos
-    carrito.forEach((producto) => {
-      const productoElement = document.createElement("div");
-      productoElement.classList.add("producto-carrito","product");
-
-      const imagenElement = document.createElement("img");
-      imagenElement.src = producto.image;
-      imagenElement.alt = producto.name;
-      imagenElement.classList.add("producto-imagen");
-
-      const nombreElement = document.createElement("h3");
-      nombreElement.textContent = producto.name;
-
-      const precioElement = document.createElement("p");
-      precioElement.textContent = `$ ${producto.price}`;
-
-      const cantidadElement = document.createElement("p");
-      cantidadElement.textContent = `Cantidad: `;
-      productoElement.appendChild(cantidadElement);
-
-      const decrementarBtn = document.createElement("button");
-      decrementarBtn.textContent = "-";
-      decrementarBtn.classList.add("cantidad-btn");
-      decrementarBtn.addEventListener("click", () => {
-        decrementarCantidad(producto.id);
-      });
-
-      const cantidadValorElement = document.createElement("span");
-      cantidadValorElement.textContent = producto.cantidad;
-
-      const incrementarBtn = document.createElement("button");
-      incrementarBtn.textContent = "+";
-      incrementarBtn.classList.add("cantidad-btn");
-      incrementarBtn.addEventListener("click", () => {
-        incrementarCantidad(producto.id);
-      });
-
-      const eliminarBtn = document.createElement("button");
-      eliminarBtn.textContent = "Eliminar";
-      eliminarBtn.classList.add("eliminar-btn");
-      eliminarBtn.addEventListener("click", () =>{
-
-      eliminarProducto(producto.id)
-      mostrarTotalPagar(); 
-      });
-
-      carritoContainer.appendChild(productoElement);
-      productoElement.appendChild(nombreElement);
-      productoElement.appendChild(imagenElement);
-      productoElement.appendChild(precioElement);
-      cantidadElement.appendChild(decrementarBtn);
-      cantidadElement.appendChild(cantidadValorElement);
-      cantidadElement.appendChild(incrementarBtn);
-      productoElement.appendChild(eliminarBtn);      
-    });
-    
-  }
-  mostrarTotalPagar(); 
-};
-
-const decrementarCantidad = (prodId) => {
-  const producto = carrito.find((prod) => prod.id === prodId);
-  if (producto) {
-    if (producto.cantidad > 1) {
-      producto.cantidad--;
-      mostrarCarrito(); // Actualizar la interfaz
-      mostrarTotalPagar(); // Actualizar el total a pagar
-      // Actualizamos el contador del carrito
-      actualizarContadorCarrito();
-    }
-  }
-};
-
-const incrementarCantidad = (prodId) => {
-  const producto = carrito.find((prod) => prod.id === prodId);
-  if (producto) {
-    producto.cantidad++;
-    mostrarCarrito(); // Actualizar la interfaz
-    mostrarTotalPagar(); // Actualizar el total a pagar
-    // Actualizamos el contador del carrito
-    actualizarContadorCarrito();
-  }
-};
-const vaciarCarritoBtn = document.getElementById("vaciar-carrito-btn");
-vaciarCarritoBtn.addEventListener("click", () => {
-    vaciarCarrito();
-    mostrarCarrito();
-});
-
-
-const vaciarCarrito = () => {
-  carrito = [];
-  console.log("Carrito vaciado");
-  actualizarContadorCarrito();
-  localStorage.setItem("carrito", JSON.stringify(carrito)); 
-};
-
-const eliminarProducto = (prodId) => {
-  const index = carrito.findIndex((prod) => prod.id === prodId);
-  if (index !== -1) {
-    carrito.splice(index, 1);
-    console.log(`Producto con ID ${prodId} eliminado del carrito`);
-    mostrarCarrito(); // Actualizar la interfaz
-    mostrarTotalPagar(); // Actualizar el total a pagar
-
-    // Actualizamos el contador del carrito
-    actualizarContadorCarrito();
-  }
-};
-
-const calcularTotalPagar = () => {
-  const total = carrito.reduce(
-    (acc, prod) => acc + prod.cantidad * prod.price,
-    0
-  );
-  return total;
-};
-
-const mostrarTotalPagar = () => {
-  const totalPagar = calcularTotalPagar();
-  const precioTotalElement = document.getElementById("precioTotal");
-  precioTotalElement.textContent = totalPagar.toFixed(2);
-
-  const descuentoElement = document.getElementById("descuento");
-  descuentoElement.textContent = "0.00"; // Restablecer el descuento a 0
-
-  const totalConDescuentoElement = document.getElementById("totalConDescuento");
-  totalConDescuentoElement.textContent = totalPagar.toFixed(2); // Mostrar el total a pagar sin descuento
-};
-
-
-const aplicarCuponBtn = document.getElementById("aplicar-cupon-btn");
-aplicarCuponBtn.addEventListener("click", aplicarDescuento);
-
-function aplicarDescuento() {
-  const cuponInput = document.getElementById("cupon-input");
-  const cupon = cuponInput.value.trim(); // Obtener el valor del cupón y eliminar espacios en blanco al inicio y al final
-
-  if (cupon === "DESCUENTO15") { // Reemplaza "DESCUENTO15" con tu código de cupón válido
-    const totalPagar = calcularTotalPagar();
-    const descuento = totalPagar * 0.15; // Calcular el descuento como el 15% del total a pagar
-    const totalConDescuento = totalPagar - descuento;
-
-    // Mostrar el descuento y el total a pagar con descuento en la interfaz
-    const descuentoElement = document.getElementById("descuento");
-    descuentoElement.textContent = descuento.toFixed(2);
-
-    const totalConDescuentoElement = document.getElementById("totalConDescuento");
-    totalConDescuentoElement.textContent = totalConDescuento.toFixed(2);
-  } else {
-    alert("El cupón ingresado no es válido.");
-  }
-
-  // Limpiar el campo de entrada del cupón
-  cuponInput.value = "";
-}
-
-const pagarBtn = document.getElementById("pagar-btn");
-pagarBtn.addEventListener("click", realizarPago);
-
-function mostrarMensajePagoExitoso(total) {
-  Swal.fire({
-    icon: 'success',
-    title: 'Pago exitoso',
-    text: `Total pagado: $${total.toFixed(2)}`,
-    confirmButtonText: 'Aceptar'
-  });
-}
-function realizarPago() {
-  const totalConDescuentoElement = document.getElementById("totalConDescuento");
-  const totalConDescuento = parseFloat(totalConDescuentoElement.textContent);
-
-  mostrarMensajePagoExitoso(totalConDescuento);
-  vaciarCarrito();
-  mostrarTotalPagar();
-  mostrarCarrito();
-}
-
-function imageCarousel(array) {
-  var experiencia = "";
-
-  for (i = 0; i < array.length; i++) {
-    experiencia += `   
-        <li class="p-2"><img src="${array[i].experiencias}" alt="${array[i].name}"></li>
-        <li class="p-2"><img src="${array[i].fotosUvas}" alt="${array[i].name}"></li>          
-          `;
-  }
-  document.getElementById("experiencias").innerHTML = experiencia;
-
-  const root = document.documentElement;
-  const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
-    "--marquee-elements-displayed"
-  );
-
-  const marqueeContent = document.querySelector("ul.marquee-content");
-
-  root.style.setProperty("--marquee-elements", marqueeContent.children.length);
-}
 
 //Página de nosotros
 function comentarioNosotros() {
@@ -534,6 +298,7 @@ function comentarioNosotros() {
   })();
 }
 
+
 var time = location.search.split("?time=");
 
 switch (time[1]) {
@@ -566,17 +331,13 @@ switch (time[1]) {
     imprimir("contacto");
     break;
 
-    case "carrito":
-      document.getElementById("name").innerHTML = "Carrito";
-      imprimir("carrito");
-      break;
-
   default:    
     document.getElementById("name").innerHTML = "Home";
     imprimir("vinos");
 }
 
-//carrusel
+
+//carrusel de desplazamiento
 
 //función que dinamisa botón left y right
 
@@ -584,10 +345,8 @@ var botonLeft = document.getElementById("left");
 
 botonLeft.addEventListener("click", function (e) {
   var page1 = document.getElementById("name").innerText;
-  console.log(textoBoton);
   if (textoBoton.indexOf(page1) > 0) {
     changePage(textoBoton.indexOf(page1) - 1);
-    console.log(textoBoton.indexOf(page1));
   } else {
     changePage(6);
   }
@@ -596,17 +355,12 @@ var botonRight = document.getElementById("right");
 
 botonRight.addEventListener("click", function (e) {
   var page = document.getElementById("name").innerText;
-  console.log(textoBoton);
-  console.log(page);
   if (textoBoton.indexOf(page) < 6) {
     changePage(textoBoton.indexOf(page) + 1);
-    console.log(textoBoton.indexOf(page));
   } else {
     changePage(0);
   }
 
-  console.log("Boton derecho");
-  // botones();
 });
 
 function changePage(i) {
@@ -746,9 +500,6 @@ function changePage(i) {
 inputSearch.addEventListener("keyup", function (evento) {
   var datoInput = evento.target.value;
 
-  //A los capturado le quito espacios en blanco anteriores y posteriores con trim()
-  //Además a lo ingresado lo paso a minusculsa con toLowerCase()
-
   search = datoInput.trim().toLowerCase();
 
   filtroCombinado();
@@ -766,40 +517,20 @@ function eventosCategories(array) {
 
   //trasformo en un array el contenido del abjeto unica
   let lastCategories = [...unica];
-  //console.log(lastCategories);
   let selectVinos = "";
   // let categoriasVinos = "";
   lastCategories.map(
     (cepa) =>
-      //       categoriasVinos += `
-      // <div class="form-check">
-      // <input
-      //   class="form-check-input checkCuadro"
-      //   type="checkbox"
-      //   value="${cepa}"
-      //   id="flexCheckDefault"
-      // />
-      // <label
-      //   class="form-check-label checkCategoria"
-      //   for="flexCheckDefault"
-      // >
-      //   ${cepa}
-      // </label>
-      // </div>
-      // `
       (selectVinos += `
 <option value="${cepa}">${cepa}</option>
 `)
   );
   document.getElementById("select").innerHTML = selectVinos;
-  // document.getElementById("checkcategories").innerHTML = categoriasVinos;
   document.getElementById("select").addEventListener("change", function (e) {
     checkCheckBoxes = [];
-    console.log(e.target.value);
     checkCheckBoxes.push(e.target.value);
     filtroCombinado();
   });
-  //checkboxListener();
 }
 
 function filtroCombinado() {
@@ -814,7 +545,6 @@ function filtroCombinado() {
       )
     );
 
-    //display(filtrado);
   } else if (search !== "" && checkCheckBoxes.length == 0) {
     filtrado = arrayAFiltrar.filter((vinos) =>
       vinos.name.toLowerCase().includes(search)
@@ -825,14 +555,11 @@ function filtroCombinado() {
       filtrado.push(...arrayAFiltrar.filter((vinos) => vinos.cepa === cepa))
     );
 
-    console.log(filtrado);
-    //display(filtrado);
   } else {
     filtrado = arrayAFiltrar;
   }
   filtrado.length > 0
     ? display(filtrado)
     : (contenedor.innerHTML = `<h1 class="ceroResult">No se encontraron los vinos para tu búsqueda </h1>`);
-  // console.log(search);
-  // console.log(checkCheckBoxes);
+
 }

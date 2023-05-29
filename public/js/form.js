@@ -181,7 +181,7 @@ function formulario() {
       title: "Gracias por tu mesaje",
       icon: "success",
       iconColor: "white",
-      confirmButtonText: "Close",
+      confirmButtonText: "Confirmar",
       width: "60%",
       grow: "",
       background: "#2ecc71",
