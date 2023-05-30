@@ -210,7 +210,7 @@ function display(array) {
   document.getElementById("contenedor").innerHTML = html;
 
   // Agregar evento click a los botones "Agregar al carrito"
- 
+
   const botonesAgregar = document.getElementsByClassName("boton-agregar");
   for (let i = 0; i < botonesAgregar.length; i++) {
     const boton = botonesAgregar[i];

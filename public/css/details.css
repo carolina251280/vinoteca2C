@@ -34,7 +34,7 @@ html, body {
     filter: drop-shadow(0px 0px 2px #ffffff);
   }
   .navbar-toggler {
-    background-color: goldenrod;
+    background-color: goldenrod;    
   }
 
   .navbar-nav {
@@ -42,7 +42,7 @@ html, body {
     align-items: center;
     justify-content: space-between;
     text-align: center;
-  
+    
   }
 
   nav ul li a{
