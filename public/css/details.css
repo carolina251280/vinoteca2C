@@ -161,9 +161,9 @@ html, body {
   transition-delay: .5s;
 }
 
-#fotoUva{
+/* #fotoUva{
   border-radius: 0 0 9rem;
-}
+} */
 
 .hero-right .photo-frame {
   position: absolute;
