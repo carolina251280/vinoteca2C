@@ -1,4 +1,4 @@
-let todosLosVinos = [];
+//let todosLosVinos = [];
 const querySearch = document.location.search;
 const id = new URLSearchParams(querySearch).get("id");
 

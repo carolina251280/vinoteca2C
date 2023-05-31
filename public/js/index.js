@@ -36,7 +36,6 @@ coleccionVinos.get().then((results) => {
       vinosEspumantes.push(vinos[i]);
     }
   }
-
   imprimir(vinos);
 });
 

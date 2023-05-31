@@ -116,7 +116,7 @@ nav ul li a:hover {
   width: 100%;
 }
 #name {
-  color: rgb(131, 35, 35);
+  color: rgb(148, 4, 4);
 }
 
 .fa-chevron-left,
@@ -194,7 +194,7 @@ nav ul li a:hover {
   height: 5%;
   font-size: 1.2em;
   text-align: center;
-  color: rgb(131, 35, 35);
+  color: rgb(148, 4, 4);
   font-family: "Roboto Condensed", sans-serif;
 }
 
@@ -272,7 +272,7 @@ footer {
   border-radius: 20px;
 }
 .text-white i:hover {
-  background: rgb(131, 35, 35);
+  background: rgb(148, 4, 4);
 }
 .me-5 {
   /* font-family: "Questrial", sans-serif; */
@@ -282,7 +282,7 @@ footer {
 
 .ceroResult{
   font-size: 25px;
-  color: rgb(131, 35, 35);
+  color: rgb(148, 4, 4);
   font-family: "Questrial", sans-serif;
   padding-top: 4rem;
 }
@@ -293,8 +293,8 @@ footer {
 .subir {
   height: 40px;
   width: 40px;
-  background-color: rgb(131, 35, 35);
-  border: 3px solid goldenrod;
+  background-color: rgb(148, 4, 4);
+  border: 3px solid rgb(107, 15, 15) ;
   color: #F3EED9;
   position: fixed;
   bottom: 20px;
@@ -307,7 +307,7 @@ footer {
 }
 
 .subir:hover{
-  color: goldenrod;
+  color: #ff4444;
 }
 
 /* Estilos para el contenedor del carrito */
